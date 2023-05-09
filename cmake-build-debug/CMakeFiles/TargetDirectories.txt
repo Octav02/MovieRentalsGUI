@@ -1,0 +1,5 @@
+/home/octav/CLionProjects/Lab10/cmake-build-debug/CMakeFiles/Lab10.dir
+/home/octav/CLionProjects/Lab10/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/octav/CLionProjects/Lab10/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/octav/CLionProjects/Lab10/cmake-build-debug/CMakeFiles/Lab10_autogen_timestamp_deps.dir
+/home/octav/CLionProjects/Lab10/cmake-build-debug/CMakeFiles/Lab10_autogen.dir
