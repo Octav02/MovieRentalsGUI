@@ -6,6 +6,8 @@ Lab10_autogen/timestamp: \
 	/home/octav/CLionProjects/Lab10/Exceptions.h \
 	/home/octav/CLionProjects/Lab10/GUI.cpp \
 	/home/octav/CLionProjects/Lab10/GUI.h \
+	/home/octav/CLionProjects/Lab10/JustListGUI.cpp \
+	/home/octav/CLionProjects/Lab10/JustListGUI.h \
 	/home/octav/CLionProjects/Lab10/Movie.cpp \
 	/home/octav/CLionProjects/Lab10/Movie.h \
 	/home/octav/CLionProjects/Lab10/MovieRepository.cpp \

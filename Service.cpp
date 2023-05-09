@@ -199,3 +199,44 @@ void Service::doUndo() {
 Service::~Service() {
 //    delete repo;
 }
+
+map<string, vector<Movie>> Service::getMoviesByType(string type) {
+    map<string, vector<Movie>> moviesByType;
+    if (type == "Title") {
+        vector<Movie> movies = repo->getAll();
+        std::copy_if(movies.begin(), movies.end(), movies.begin(), [](const Movie& movie) {
+            return movie.getTitle() == movie.getTitle();
+        });
+        for (const Movie& movie : movies) {
+            moviesByType[movie.getTitle()].push_back(movie);
+        }
+    }
+    else if (type == "Genre") {
+        vector<Movie> movies = repo->getAll();
+        std::copy_if(movies.begin(), movies.end(), movies.begin(), [](const Movie& movie) {
+            return movie.getGenre() == movie.getGenre();
+        });
+        for (const Movie& movie : movies) {
+            moviesByType[movie.getGenre()].push_back(movie);
+        }
+    }
+    else if (type == "Year") {
+        vector<Movie> movies = repo->getAll();
+        std::copy_if(movies.begin(), movies.end(), movies.begin(), [](const Movie& movie) {
+            return movie.getYear() == movie.getYear();
+        });
+        for (const Movie& movie : movies) {
+            moviesByType[to_string(movie.getYear())].push_back(movie);
+        }
+    }
+    else if (type == "Main Actor") {
+        vector<Movie> movies = repo->getAll();
+        std::copy_if(movies.begin(), movies.end(), movies.begin(), [](const Movie& movie) {
+            return movie.getMainActor() == movie.getMainActor();
+        });
+        for (const Movie& movie : movies) {
+            moviesByType[movie.getMainActor()].push_back(movie);
+        }
+    }
+    return moviesByType;
+}

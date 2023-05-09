@@ -5,6 +5,10 @@
 #include "Validator.h"
 #include "Undo.h"
 #include <memory>
+#include <map>
+
+using std::map;
+
 class Service {
 private:
     AbstractRepository* repo;
@@ -36,6 +40,8 @@ public:
     void deleteFromWatchlist(const string& title);
     vector<Movie> getWatchlist();
     void generateWatchlist(int numberOfMovies);
+
+    map<string, vector<Movie>> getMoviesByType(string type);
 
     void saveWatchlistToFile(const string& filename);
 

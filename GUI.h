@@ -15,6 +15,7 @@
 #include <QTableWidget>
 #include <vector>
 #include <string>
+#include "JustListGUI.h"
 
 class GUI : public QWidget{
 private:
@@ -22,6 +23,18 @@ private:
     QTableWidget* table = new QTableWidget(0,4);
     QPushButton* btnExit = new QPushButton("Exit");
     QPushButton* btnAdd = new QPushButton("Add");
+    QPushButton* btnUpdate = new QPushButton("Update");
+    QPushButton* btnDelete = new QPushButton("Delete");
+
+    QPushButton* btnUndo = new QPushButton("Undo");
+
+    QPushButton* btnFilterByTitle = new QPushButton("Filter by title");
+    QPushButton* btnFilterByYear = new QPushButton("Filter by year");
+    QPushButton* btnSortByTitle = new QPushButton("Sort by title");
+    QPushButton* btnSortByGenre = new QPushButton("Sort by genre");
+    QPushButton* btnSortByYear = new QPushButton("Sort by year");
+    QPushButton* btnSortByMainActor = new QPushButton("Sort by main actor");
+
 
 
     QLineEdit* titleText = new QLineEdit();
@@ -43,5 +56,8 @@ public:
 
     void addMovie();
 
+    void updateMovie();
+
+    void deleteMovie();
 };
 

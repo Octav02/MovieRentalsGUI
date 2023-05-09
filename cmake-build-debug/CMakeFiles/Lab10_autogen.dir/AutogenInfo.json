@@ -374,6 +374,12 @@
 			null
 		],
 		[
+			"/home/octav/CLionProjects/Lab10/JustListGUI.h",
+			"MU",
+			"EWIEGA46WW/moc_JustListGUI.cpp",
+			null
+		],
+		[
 			"/home/octav/CLionProjects/Lab10/Movie.h",
 			"MU",
 			"EWIEGA46WW/moc_Movie.cpp",
@@ -476,6 +482,7 @@
 		[ "/home/octav/CLionProjects/Lab10/AbstractRepository.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/Exceptions.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/GUI.cpp", "MU", null ],
+		[ "/home/octav/CLionProjects/Lab10/JustListGUI.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/Movie.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/MovieRepository.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/MovieRepositoryFile.cpp", "MU", null ],
