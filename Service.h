@@ -31,6 +31,7 @@ public:
 
     vector<Movie> getMoviesByTitle(const string& title);
     vector<Movie> getMoviesByYear(int year);
+    vector<Movie> getMoviesByGenre(const string& genre);
     vector<Movie> sortMoviesByTitle(bool ascending);
     vector<Movie> sortMoviesByGenre(bool ascending);
     vector<Movie> sortMoviesByYear(bool ascending);

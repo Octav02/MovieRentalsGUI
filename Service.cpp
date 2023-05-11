@@ -240,3 +240,12 @@ map<string, vector<Movie>> Service::getMoviesByType(string type) {
     }
     return moviesByType;
 }
+
+vector<Movie> Service::getMoviesByGenre(const string &genre) {
+    vector<Movie> movies = repo->getAll();
+    vector<Movie> moviesByGenre;
+    copy_if(movies.begin(), movies.end(), back_inserter(moviesByGenre), [genre](const Movie&  movie) {
+        return movie.getGenre() == genre;
+    });
+    return moviesByGenre;
+}
