@@ -420,6 +420,12 @@
 			"MU",
 			"EWIEGA46WW/moc_Validator.cpp",
 			null
+		],
+		[
+			"/home/octav/CLionProjects/Lab10/WatchlistGUI.h",
+			"MU",
+			"EWIEGA46WW/moc_WatchlistGUI.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -490,6 +496,7 @@
 		[ "/home/octav/CLionProjects/Lab10/Tests.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/Undo.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/Validator.cpp", "MU", null ],
+		[ "/home/octav/CLionProjects/Lab10/WatchlistGUI.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/main.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

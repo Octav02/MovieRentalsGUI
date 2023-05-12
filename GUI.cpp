@@ -5,13 +5,18 @@ void GUI::initGUI() {
     auto mainLayout = new QHBoxLayout();
 
     setLayout(mainLayout);
-    mainLayout->addWidget(table);
 
 
+
+    auto verticalLayer0 = new QVBoxLayout();
     auto verticalLayer2 = new QVBoxLayout();
     auto verticalLayer1 = new QVBoxLayout();
     auto formLayout = new QFormLayout();
+    mainLayout->addLayout(verticalLayer0);
+
+    mainLayout->addLayout(formLayout);
     verticalLayer2->addLayout(formLayout);
+    verticalLayer0->addWidget(table);
     auto horizontalLayer2 = new QHBoxLayout();
     horizontalLayer2->addWidget(btnSortByTitle);
     horizontalLayer2->addWidget(btnSortByGenre);
@@ -21,15 +26,13 @@ void GUI::initGUI() {
     horizontalLayer2->addWidget(btnFilterByYear);
     horizontalLayer2->addWidget(btnFilterByGenre);
 
-    verticalLayer2->addLayout(horizontalLayer2);
+    verticalLayer0->addLayout(horizontalLayer2);
 
     formLayout->addRow("Title", titleText);
     formLayout->addRow("Genre", genreText);
     formLayout->addRow("Year", yearText);
     formLayout->addRow("Main Actor", mainActorText);
 
-
-    verticalLayer1->addLayout(verticalLayer2);
     auto horizontalLayer1 = new QHBoxLayout();
     horizontalLayer1->addWidget(btnAdd);
     horizontalLayer1->addWidget(btnExit);
@@ -37,6 +40,7 @@ void GUI::initGUI() {
     horizontalLayer1->addWidget(btnDelete);
     verticalLayer1->addLayout(horizontalLayer1);
     verticalLayer1->addWidget(btnUndo);
+    verticalLayer0->addWidget(btnWatchList);
     mainLayout->addLayout(verticalLayer1);
     mainLayout->addLayout(buttonLayout);
 
@@ -188,7 +192,11 @@ void GUI::initConnect() {
         mainActorText->setText(selectedMainActor->text());
     });
     //For every button with the genre, we connect it to the function that filters by genre
-
+    QObject::connect(btnWatchList,&QPushButton::clicked,[&](){
+        qDebug() << "Watchlist clicked";
+        auto wdg = new WatchlistGUI(service);
+        wdg->show();
+    });
 }
 
 void GUI::updateMovie() {

@@ -15,6 +15,7 @@
 #include <QTableWidget>
 #include <vector>
 #include <string>
+#include "WatchlistGUI.h"
 #include "JustListGUI.h"
 
 class GUI : public QWidget{
@@ -37,6 +38,7 @@ private:
     QPushButton* btnSortByGenre = new QPushButton("Sort by genre");
     QPushButton* btnSortByYear = new QPushButton("Sort by year");
     QPushButton* btnSortByMainActor = new QPushButton("Sort by main actor");
+    QPushButton* btnWatchList = new QPushButton("Watchlist Window");
 
 
     vector<QPushButton*> genreButtons;

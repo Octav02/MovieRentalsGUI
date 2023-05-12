@@ -22,6 +22,8 @@ Lab10_autogen/timestamp: \
   /home/octav/CLionProjects/Lab10/Undo.h \
   /home/octav/CLionProjects/Lab10/Validator.cpp \
   /home/octav/CLionProjects/Lab10/Validator.h \
+  /home/octav/CLionProjects/Lab10/WatchlistGUI.cpp \
+  /home/octav/CLionProjects/Lab10/WatchlistGUI.h \
   CMakeFiles/3.25.2/CMakeCCompiler.cmake \
   CMakeFiles/3.25.2/CMakeCXXCompiler.cmake \
   CMakeFiles/3.25.2/CMakeSystem.cmake \
