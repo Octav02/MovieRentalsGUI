@@ -14,7 +14,7 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(Lab10 main.cpp Movie.cpp Movie.h AbstractRepository.cpp AbstractRepository.h MovieRepository.cpp MovieRepository.h Exceptions.cpp Exceptions.h Tests.cpp Tests.h Validator.cpp Validator.h Undo.cpp Undo.h MovieRepositoryFile.cpp MovieRepositoryFile.h Service.cpp Service.h GUI.cpp GUI.h JustListGUI.cpp JustListGUI.h WatchlistGUI.cpp WatchlistGUI.h)
+add_executable(Lab10 main.cpp Movie.cpp Movie.h AbstractRepository.cpp AbstractRepository.h MovieRepository.cpp MovieRepository.h Exceptions.cpp Exceptions.h Tests.cpp Tests.h Validator.cpp Validator.h Undo.cpp Undo.h MovieRepositoryFile.cpp MovieRepositoryFile.h Service.cpp Service.h GUI.cpp GUI.h JustListGUI.cpp JustListGUI.h WatchlistCRUDGUI.cpp WatchlistCRUDGUI.h WatchListReadOnlyGUI.cpp WatchListReadOnlyGUI.h Observer.cpp Observer.h)
 target_link_libraries(Lab10
         Qt::Core
         Qt::Gui

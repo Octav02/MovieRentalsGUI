@@ -14,6 +14,8 @@ Lab10_autogen/timestamp: \
   /home/octav/CLionProjects/Lab10/MovieRepository.h \
   /home/octav/CLionProjects/Lab10/MovieRepositoryFile.cpp \
   /home/octav/CLionProjects/Lab10/MovieRepositoryFile.h \
+  /home/octav/CLionProjects/Lab10/Observer.cpp \
+  /home/octav/CLionProjects/Lab10/Observer.h \
   /home/octav/CLionProjects/Lab10/Service.cpp \
   /home/octav/CLionProjects/Lab10/Service.h \
   /home/octav/CLionProjects/Lab10/Tests.cpp \
@@ -22,8 +24,10 @@ Lab10_autogen/timestamp: \
   /home/octav/CLionProjects/Lab10/Undo.h \
   /home/octav/CLionProjects/Lab10/Validator.cpp \
   /home/octav/CLionProjects/Lab10/Validator.h \
-  /home/octav/CLionProjects/Lab10/WatchlistGUI.cpp \
-  /home/octav/CLionProjects/Lab10/WatchlistGUI.h \
+  /home/octav/CLionProjects/Lab10/WatchListReadOnlyGUI.cpp \
+  /home/octav/CLionProjects/Lab10/WatchListReadOnlyGUI.h \
+  /home/octav/CLionProjects/Lab10/WatchlistCRUDGUI.cpp \
+  /home/octav/CLionProjects/Lab10/WatchlistCRUDGUI.h \
   CMakeFiles/3.25.2/CMakeCCompiler.cmake \
   CMakeFiles/3.25.2/CMakeCXXCompiler.cmake \
   CMakeFiles/3.25.2/CMakeSystem.cmake \
@@ -266,40 +270,40 @@ Lab10_autogen/timestamp: \
   /home/octav/Qt/6.5.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake \
   /home/octav/Qt/6.5.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
   /home/octav/Qt/6.5.0/gcc_64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeFindDependencyMacro.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CheckCSourceCompiles.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CheckCXXCompilerFlag.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CheckCXXSourceCompiles.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CheckIncludeFile.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/CheckLibraryExists.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/FeatureSummary.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindOpenGL.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPackageMessage.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPkgConfig.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindThreads.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindVulkan.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/GNUInstallDirs.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/Internal/CheckCompilerFlag.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/Internal/CheckFlagCommonConfig.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/MacroAddFileDependencies.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/Linux-GNU-C.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/Linux-GNU-CXX.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/Linux-GNU.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/Linux.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/UnixPaths.cmake \
-  /snap/clion/235/bin/cmake/linux/x64/bin/cmake
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeFindDependencyMacro.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CheckCSourceCompiles.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CheckCXXCompilerFlag.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CheckCXXSourceCompiles.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CheckIncludeFile.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CheckLibraryExists.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/FeatureSummary.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindOpenGL.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPackageMessage.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPkgConfig.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindThreads.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindVulkan.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/GNUInstallDirs.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Internal/CheckCompilerFlag.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Internal/CheckFlagCommonConfig.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/MacroAddFileDependencies.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/Linux-GNU-C.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/Linux-GNU-CXX.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/Linux-GNU.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/Linux.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/UnixPaths.cmake \
+  /snap/clion/237/bin/cmake/linux/x64/bin/cmake

@@ -6,12 +6,13 @@
 #include "Undo.h"
 #include <memory>
 #include <map>
+#include "Observer.h"
 
 using std::map;
 
-class Service {
+class Service : public Observable {
 private:
-    AbstractRepository* repo;
+    AbstractRepository* repo{};
     MovieRepository watchlist = MovieRepository();
     Validator validator;
     vector<unique_ptr<ActiuneUndo>> undoActions;

@@ -1,12 +1,20 @@
-
 #include "GUI.h"
 
 void GUI::initGUI() {
     auto mainLayout = new QHBoxLayout();
-
     setLayout(mainLayout);
 
+    //Set names for columns
+    table->setHorizontalHeaderItem(0, new QTableWidgetItem("Title"));
+    table->setHorizontalHeaderItem(1, new QTableWidgetItem("Genre"));
+    table->setHorizontalHeaderItem(2, new QTableWidgetItem("Year"));
+    table->setHorizontalHeaderItem(3, new QTableWidgetItem("Main Actor"));
 
+//    table->setColumnWidth(0, 100);
+//    table->setColumnWidth(1, 100);
+//    table->setColumnWidth(2, 100);
+//    table->setColumnWidth(3, 100);
+    table->setSelectionBehavior(QAbstractItemView::SelectRows);
 
     auto verticalLayer0 = new QVBoxLayout();
     auto verticalLayer2 = new QVBoxLayout();
@@ -41,6 +49,7 @@ void GUI::initGUI() {
     verticalLayer1->addLayout(horizontalLayer1);
     verticalLayer1->addWidget(btnUndo);
     verticalLayer0->addWidget(btnWatchList);
+    verticalLayer0->addWidget(btnReadOnly);
     mainLayout->addLayout(verticalLayer1);
     mainLayout->addLayout(buttonLayout);
 
@@ -50,6 +59,12 @@ void GUI::initGUI() {
 void GUI::loadData(const vector<Movie> &movies) {
     table->clear();
     table->setRowCount(0);
+
+    table->setHorizontalHeaderItem(0, new QTableWidgetItem("Title"));
+    table->setHorizontalHeaderItem(1, new QTableWidgetItem("Genre"));
+    table->setHorizontalHeaderItem(2, new QTableWidgetItem("Year"));
+    table->setHorizontalHeaderItem(3, new QTableWidgetItem("Main Actor"));
+
     for (const auto &movie: movies) {
         int row = table->rowCount();
         table->insertRow(row);
@@ -72,14 +87,11 @@ void GUI::addMovie() {
         string mainActor = mainActorText->text().toStdString();
         service.addMovie(title, genre, year, mainActor);
         loadData(service.getAll());
-    }
-    catch (const RepositoryException &exception) {
+    } catch (const RepositoryException &exception) {
         QMessageBox::information(nullptr, "Error", QString::fromStdString(exception.what()));
-    }
-    catch (const ValidationException &exception) {
+    } catch (const ValidationException &exception) {
         QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
-    }
-    catch (const exception &exception) {
+    } catch (const exception &exception) {
         QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
     }
 }
@@ -88,6 +100,11 @@ void GUI::initConnect() {
     QObject::connect(btnExit, &QPushButton::clicked, [&]() {
         qDebug() << "Exit apasat";
         close();
+    });
+    QObject::connect(btnReadOnly, &QPushButton::clicked, [&]() {
+        qDebug() << "ReadOnly apasat";
+        auto wdg = new WatchListReadOnlyGUI(service);
+        wdg->show();
     });
     QObject::connect(btnAdd, &QPushButton::clicked, [&]() {
         qDebug() << "Add apasat";
@@ -116,8 +133,7 @@ void GUI::initConnect() {
             int year = stoi(yearText->text().toStdString());
             auto wdg = new JustListGUI(service.getMoviesByYear(year));
             wdg->show();
-        }
-        catch (const exception &exception) {
+        } catch (const exception &exception) {
             QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
         }
 
@@ -153,20 +169,17 @@ void GUI::initConnect() {
         wdg->show();
         loadData(service.sortMoviesByMainActor(true));
     });
-    QObject::connect(btnUndo, &QPushButton::clicked,[&]() {
+    QObject::connect(btnUndo, &QPushButton::clicked, [&]() {
         qDebug() << "Undo apasat";
         try {
             service.doUndo();
             loadData(service.getAll());
             addButtons();
-        }
-        catch (const RepositoryException &exception) {
+        } catch (const RepositoryException &exception) {
             QMessageBox::information(nullptr, "Error", QString::fromStdString(exception.what()));
-        }
-        catch (const ValidationException &exception) {
+        } catch (const ValidationException &exception) {
             QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
-        }
-        catch (const exception &exception) {
+        } catch (const exception &exception) {
             QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
         }
     });
@@ -192,9 +205,9 @@ void GUI::initConnect() {
         mainActorText->setText(selectedMainActor->text());
     });
     //For every button with the genre, we connect it to the function that filters by genre
-    QObject::connect(btnWatchList,&QPushButton::clicked,[&](){
+    QObject::connect(btnWatchList, &QPushButton::clicked, [&]() {
         qDebug() << "Watchlist clicked";
-        auto wdg = new WatchlistGUI(service);
+        auto wdg = new WatchlistCRUDGUI(service);
         wdg->show();
     });
 }
@@ -208,14 +221,11 @@ void GUI::updateMovie() {
         service.updateMovie(title, genre, year, mainActor);
         loadData(service.getAll());
         addButtons();
-    }
-    catch (const RepositoryException &exception) {
+    } catch (const RepositoryException &exception) {
         QMessageBox::information(nullptr, "Error", QString::fromStdString(exception.what()));
-    }
-    catch (const ValidationException &exception) {
+    } catch (const ValidationException &exception) {
         QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
-    }
-    catch (const exception &exception) {
+    } catch (const exception &exception) {
         QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
     }
 }
@@ -225,14 +235,11 @@ void GUI::deleteMovie() {
         string title = titleText->text().toStdString();
         service.removeMovie(title, "", 2, "");
         loadData(service.getAll());
-    }
-    catch (const RepositoryException &exception) {
+    } catch (const RepositoryException &exception) {
         QMessageBox::information(nullptr, "Error", QString::fromStdString(exception.what()));
-    }
-    catch (const ValidationException &exception) {
+    } catch (const ValidationException &exception) {
         QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
-    }
-    catch (const exception &exception) {
+    } catch (const exception &exception) {
         QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
     }
 }
@@ -250,7 +257,7 @@ void GUI::addButtons() {
         delete item;
     }
 
-    for (const auto& element: map1) {
+    for (const auto &element: map1) {
         auto newBtn = new QPushButton(QString::fromStdString(element.first));
         genreButtons.push_back(newBtn);
         buttonLayout->addWidget(newBtn);

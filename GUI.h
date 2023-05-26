@@ -15,18 +15,21 @@
 #include <QTableWidget>
 #include <vector>
 #include <string>
-#include "WatchlistGUI.h"
+#include "WatchlistCRUDGUI.h"
 #include "JustListGUI.h"
+#include "WatchListReadOnlyGUI.h"
+#include "Observer.h"
 
 class GUI : public QWidget{
 private:
     Service& service;
     QTableWidget* table = new QTableWidget(0,4);
+
     QPushButton* btnExit = new QPushButton("Exit");
     QPushButton* btnAdd = new QPushButton("Add");
     QPushButton* btnUpdate = new QPushButton("Update");
     QPushButton* btnDelete = new QPushButton("Delete");
-
+    QPushButton* btnReadOnly = new QPushButton("Read Only Watchlist");
     QPushButton* btnUndo = new QPushButton("Undo");
 
     QVBoxLayout* buttonLayout = new QVBoxLayout();

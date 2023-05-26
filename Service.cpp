@@ -12,6 +12,7 @@ void Service::addMovie(const string &title, const string &genre, int year, const
     this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoAdauga));
 }
 
+
 void Service::removeMovie(const string &title, const string &genre, int year, const string &mainActor) {
     Movie movie(title, genre, year, mainActor);
     this->repo->remove(movie);
@@ -127,11 +128,13 @@ void Service::addToWatchlist(const string& title, const string& genre, int year,
     Movie movie = Movie(title, genre, year, mainActor);
     validator.validateMovie(movie);
     watchlist.add(movie);
+    notify();
 }
 
 void Service::deleteFromWatchlist(const string& title) {
     Movie movie =  Movie(title, "", 0, "");
     watchlist.remove(movie);
+    notify();
 }
 
 vector<Movie> Service::getWatchlist() {
@@ -172,7 +175,7 @@ void Service::generateWatchlist(int numberOfMovies) {
         Movie movie = Movie(title, genre, year, mainActor);
         watchlist.add(movie);
     }
-
+    notify();
 }
 
 void Service::saveWatchlistToFile(const string& filename) {

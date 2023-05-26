@@ -2,9 +2,9 @@
 // Created by octav on 11.05.2023.
 //
 
-#include "WatchlistGUI.h"
+#include "WatchlistCRUDGUI.h"
 
-void WatchlistGUI::initGUI() {
+void WatchlistCRUDGUI::initGUI() {
     auto mainLayout = new QHBoxLayout();
 
     setLayout(mainLayout);
@@ -17,6 +17,7 @@ void WatchlistGUI::initGUI() {
     formLayout->addRow("Year",yearText);
     formLayout->addRow("Main actor",mainActorText);
     formLayout->addRow("File name", fileName);
+    formLayout->addRow("Number of movies", numberOfMovies);
     mainLayout->addLayout(formLayout);
 
     auto buttonLayout = new QVBoxLayout();
@@ -24,15 +25,17 @@ void WatchlistGUI::initGUI() {
     buttonLayout->addWidget(btnAdd);
     buttonLayout->addWidget(btnDelete);
     buttonLayout->addWidget(btnSaveToFile);
+    buttonLayout->addWidget(btnGenerateWatchlist);
     mainLayout->addLayout(buttonLayout);
 }
 
-void WatchlistGUI::initConnect() {
+void WatchlistCRUDGUI::initConnect() {
     QObject::connect(btnAdd, &QPushButton::clicked, [&]() {
         try {
             service.addToWatchlist(titleText->text().toStdString(), genreText->text().toStdString(),
                                  stoi(yearText->text().toStdString()), mainActorText->text().toStdString());
             loadData();
+            update();
         }
         catch (exception &e) {
             QMessageBox::critical(this, "Error", e.what());
@@ -42,6 +45,7 @@ void WatchlistGUI::initConnect() {
         try {
             service.deleteFromWatchlist(titleText->text().toStdString());
             loadData();
+            update();
         }
         catch (exception &e) {
             QMessageBox::critical(this, "Error", e.what());
@@ -51,6 +55,17 @@ void WatchlistGUI::initConnect() {
         try {
             string savedFileName = "../Watchlists/"+fileName->text().toStdString()+".csv";
             service.saveWatchlistToFile(savedFileName);
+        }
+        catch (exception &e) {
+            QMessageBox::critical(this, "Error", e.what());
+        }
+    });
+    QObject::connect(btnGenerateWatchlist, &QPushButton::clicked, [&]() {
+        try {
+            int numberOfMoviesInt = stoi(numberOfMovies->text().toStdString());
+            service.generateWatchlist(numberOfMoviesInt);
+            loadData();
+            update();
         }
         catch (exception &e) {
             QMessageBox::critical(this, "Error", e.what());
@@ -78,7 +93,7 @@ void WatchlistGUI::initConnect() {
     });
 }
 
-void WatchlistGUI::loadData() {
+void WatchlistCRUDGUI::loadData() {
     vector<Movie> watchList = service.getWatchlist();
     table->clear();
     table->setRowCount(0);
