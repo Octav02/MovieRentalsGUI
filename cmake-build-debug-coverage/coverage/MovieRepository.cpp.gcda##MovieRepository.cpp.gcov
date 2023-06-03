@@ -1,0 +1,169 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/MovieRepository.cpp
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/MovieRepository.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/MovieRepository.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "MovieRepository.h"
+        -:    2:
+        -:    3:
+       4*:    4:MovieRepository::~MovieRepository() {
+        4:    5:    this->movies.clear();
+       4*:    6:}
+------------------
+_ZN15MovieRepositoryD0Ev:
+function _ZN15MovieRepositoryD0Ev called 0 returned 0% blocks executed 0%
+    #####:    4:MovieRepository::~MovieRepository() {
+        -:    5:    this->movies.clear();
+    #####:    6:}
+    %%%%%:    6-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN15MovieRepositoryD2Ev:
+function _ZN15MovieRepositoryD2Ev called 4 returned 100% blocks executed 100%
+        4:    4:MovieRepository::~MovieRepository() {
+        4:    5:    this->movies.clear();
+        4:    5-block  0
+call    0 returned 4
+        4:    6:}
+call    0 returned 4
+------------------
+        -:    7:
+function _ZN15MovieRepository3addERK5Movie called 7 returned 71% blocks executed 75%
+        7:    8:void MovieRepository::add(const Movie &movie) {
+        7:    9:    if (this->find(movie) != -1)
+        7:    9-block  0
+call    0 returned 7
+branch  1 taken 2 (fallthrough)
+branch  2 taken 5
+        2:   10:        throw RepositoryException("Movie already exists!");
+        2:   10-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:   10-block  1
+call    5 returned 2
+call    6 returned 2
+call    7 returned 2
+call    8 returned 0
+    $$$$$:   10-block  2
+call    9 never executed
+    $$$$$:   10-block  3
+    $$$$$:   10-block  4
+call   10 never executed
+        5:   11:    this->movies.push_back(movie);
+        5:   11-block  0
+call    0 returned 5
+        5:   12:}
+        -:   13:
+function _ZN15MovieRepository6removeERK5Movie called 3 returned 33% blocks executed 68%
+        3:   14:void MovieRepository::remove(const Movie &movie) {
+        3:   15:    int index = this->find(movie);
+        3:   15-block  0
+call    0 returned 3
+        3:   16:    if (index == -1)
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        2:   17:        throw RepositoryException("Movie does not exist!");
+        2:   17-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:   17-block  1
+call    5 returned 2
+call    6 returned 2
+call    7 returned 2
+call    8 returned 0
+    $$$$$:   17-block  2
+call    9 never executed
+    $$$$$:   17-block  3
+    $$$$$:   17-block  4
+call   10 never executed
+        1:   18:    this->movies.erase(this->movies.begin() + index);
+        1:   18-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   18-block  1
+    $$$$$:   18-block  2
+        1:   19:}
+        1:   19-block  0
+        -:   20:
+function _ZN15MovieRepository6updateERK5Movie called 2 returned 50% blocks executed 76%
+        2:   21:void MovieRepository::update(const Movie &movie) {
+        2:   22:    int index = this->find(movie);
+        2:   22-block  0
+call    0 returned 2
+        2:   23:    if (index == -1)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   24:        throw RepositoryException("Movie does not exist!");
+        1:   24-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   24-block  1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 0
+    $$$$$:   24-block  2
+call    9 never executed
+    $$$$$:   24-block  3
+    $$$$$:   24-block  4
+call   10 never executed
+        1:   25:    this->movies[index] = movie;
+        1:   25-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   26:}
+        -:   27:
+function _ZNK15MovieRepository6getAllEv called 4 returned 100% blocks executed 100%
+        4:   28:const vector<Movie> &MovieRepository::getAll() const {
+        4:   29:    return this->movies;
+        4:   29-block  0
+        -:   30:}
+        -:   31:
+function _ZNK15MovieRepository4sizeEv called 1 returned 100% blocks executed 100%
+        1:   32:int MovieRepository::size() const {
+        1:   33:    return this->movies.size();
+        1:   33-block  0
+call    0 returned 1
+        -:   34:}
+        -:   35:
+function _ZNK15MovieRepository8getMovieEi called 1 returned 100% blocks executed 100%
+        1:   36:const Movie &MovieRepository::getMovie(int index) const {
+        1:   37:    return this->movies[index];
+        1:   37-block  0
+call    0 returned 1
+        -:   38:}
+        -:   39:
+function _ZNK15MovieRepository4findERK5Movie called 12 returned 100% blocks executed 100%
+       12:   40:int MovieRepository::find(const Movie &movie) const {
+       20:   41:    for (int i = 0; i < this->movies.size(); i++) {
+       12:   41-block  0
+        8:   41-block  1
+       20:   41-block  2
+call    0 returned 20
+branch  1 taken 12
+branch  2 taken 8 (fallthrough)
+       12:   42:        if (this->movies[i] == movie)
+       12:   42-block  0
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 4 (fallthrough)
+branch  3 taken 8
+        4:   43:            return i;
+        4:   43-block  0
+        -:   44:    }
+        8:   45:    return -1;
+        8:   45-block  0
+        -:   46:}

@@ -1,0 +1,84 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/TableModel.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/GUI.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/GUI.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include "Service.h"
+        -:    4:#include <QAbstractTableModel>
+        -:    5:#include <QTableView>
+        -:    6:
+        -:    7:class TableModel : public QAbstractTableModel {
+        -:    8:private:
+        -:    9:    Service& service;
+        -:   10:public:
+        -:   11:    TableModel(Service& service1) : service{service1} {}
+        -:   12:    int rowCount(const QModelIndex &parent = QModelIndex()) const override {
+        -:   13:        return service.getAll().size();
+        -:   14:    }
+        -:   15:    int columnCount(const QModelIndex &parent = QModelIndex()) const override {
+        -:   16:        return 4;
+        -:   17:    }
+        -:   18:    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override {
+        -:   19:        int row = index.row();
+        -:   20:        int column = index.column();
+        -:   21:        Movie movie = service.getAll()[row];
+        -:   22:        if (role == Qt::DisplayRole) {
+        -:   23:            switch (column) {
+        -:   24:                case 0:
+        -:   25:                    return QString::fromStdString(movie.getTitle());
+        -:   26:                case 1:
+        -:   27:                    return QString::fromStdString(movie.getGenre());
+        -:   28:                case 2:
+        -:   29:                    return QString::fromStdString(std::to_string(movie.getYear()));
+        -:   30:                case 3:
+        -:   31:                    return QString::fromStdString(movie.getMainActor());
+        -:   32:                default:
+        -:   33:                    break;
+        -:   34:            }
+        -:   35:        }
+        -:   36:        return QVariant();
+        -:   37:    }
+        -:   38:    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override {
+        -:   39:        if (role == Qt::DisplayRole) {
+        -:   40:            if (orientation == Qt::Horizontal) {
+        -:   41:                switch (section) {
+        -:   42:                    case 0:
+        -:   43:                        return QString("Title");
+        -:   44:                    case 1:
+        -:   45:                        return QString("Genre");
+        -:   46:                    case 2:
+        -:   47:                        return QString("Year of release");
+        -:   48:                    case 3:
+        -:   49:                        return QString("Main actor");
+        -:   50:                    default:
+        -:   51:                        break;
+        -:   52:                }
+        -:   53:            }
+        -:   54:        }
+        -:   55:        return QVariant();
+        -:   56:    }
+function _ZN10TableModel6updateEv called 1 returned 100% blocks executed 71%
+        1:   57:    void update() {
+        1:   58:        emit layoutChanged();
+        1:   58-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   58-block  1
+call    4 returned 1
+    $$$$$:   58-block  2
+call    5 never executed
+        1:   59:    }
+        -:   60:
+function _ZN10TableModel18updateInternalDataERKSt6vectorI5MovieSaIS1_EE called 1 returned 100% blocks executed 100%
+        1:   61:    void updateInternalData(const vector<Movie> &vector) {
+        1:   62:        beginResetModel();
+        1:   62-block  0
+call    0 returned 1
+        1:   63:        endResetModel();
+call    0 returned 1
+        1:   64:    }
+        -:   65:};
+        -:   66:

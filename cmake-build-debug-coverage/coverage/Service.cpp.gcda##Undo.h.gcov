@@ -1,0 +1,80 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/Undo.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Service.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include "MovieRepositoryFile.h"
+        -:    4:
+        -:    5:
+        -:    6:class ActiuneUndo {
+        -:    7:public :
+        -:    8:    virtual void undo() = 0;
+    #####:    9:    virtual ~ActiuneUndo() = default;
+------------------
+_ZN11ActiuneUndoD0Ev:
+function _ZN11ActiuneUndoD0Ev called 0 returned 0% blocks executed 0%
+    #####:    9:    virtual ~ActiuneUndo() = default;
+    %%%%%:    9-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN11ActiuneUndoD2Ev:
+function _ZN11ActiuneUndoD2Ev called 0 returned 0% blocks executed 0%
+    #####:    9:    virtual ~ActiuneUndo() = default;
+------------------
+        -:   10:};
+        -:   11:
+        -:   12:class UndoAdauga : public ActiuneUndo {
+        -:   13:private:
+        -:   14:    Movie movie;
+        -:   15:    AbstractRepository* repo;
+        -:   16:public:
+function _ZN10UndoAdaugaC2EP18AbstractRepositoryRK5Movie called 7 returned 100% blocks executed 80%
+        7:   17:    UndoAdauga(AbstractRepository* repo, const Movie& movie) :  repo{repo}, movie{movie} {};
+        7:   17-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
+branch  3 taken 0 (throw)
+        7:   17-block  1
+    $$$$$:   17-block  2
+call    4 never executed
+        -:   18:    void undo() override;
+        -:   19:};
+        -:   20:
+        -:   21:class UndoSterge : public ActiuneUndo {
+        -:   22:private:
+        -:   23:    Movie movie;
+        -:   24:    AbstractRepository* repo;
+        -:   25:public:
+function _ZN10UndoStergeC2EP18AbstractRepositoryRK5Movie called 5 returned 100% blocks executed 80%
+        5:   26:    UndoSterge(AbstractRepository* repo, const Movie& movie) : repo{repo}, movie{movie} {};
+        5:   26-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:   26-block  1
+    $$$$$:   26-block  2
+call    4 never executed
+        -:   27:    void undo() override;
+        -:   28:};
+        -:   29:
+        -:   30:class UndoModifica : public ActiuneUndo {
+        -:   31:private:
+        -:   32:    Movie movie;
+        -:   33:    AbstractRepository* repo;
+        -:   34:public:
+function _ZN12UndoModificaC2EP18AbstractRepositoryRK5Movie called 2 returned 100% blocks executed 80%
+        2:   35:    UndoModifica(AbstractRepository* repo, const Movie& movie) : repo{repo}, movie{movie} {};
+        2:   35-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   35-block  1
+    $$$$$:   35-block  2
+call    4 never executed
+        -:   36:    void undo() override;
+        -:   37:};

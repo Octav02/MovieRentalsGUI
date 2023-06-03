@@ -21,7 +21,7 @@ void WatchListReadOnlyGUI::paintEvent(QPaintEvent *event) {
 
         painter.drawRect(x, y, 20,30);
         QImage image("../img1.jpg");
-        image.scaled(100,100,Qt::KeepAspectRatio);
+        image.scaled(200,200,Qt::KeepAspectRatio);
         painter.drawImage(x,y,image);
         x += 150;
         y += 150;

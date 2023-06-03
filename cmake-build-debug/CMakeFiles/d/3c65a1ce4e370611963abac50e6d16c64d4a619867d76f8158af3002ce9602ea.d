@@ -18,6 +18,8 @@ Lab10_autogen/timestamp: \
   /home/octav/CLionProjects/Lab10/Observer.h \
   /home/octav/CLionProjects/Lab10/Service.cpp \
   /home/octav/CLionProjects/Lab10/Service.h \
+  /home/octav/CLionProjects/Lab10/TableModel.cpp \
+  /home/octav/CLionProjects/Lab10/TableModel.h \
   /home/octav/CLionProjects/Lab10/Tests.cpp \
   /home/octav/CLionProjects/Lab10/Tests.h \
   /home/octav/CLionProjects/Lab10/Undo.cpp \

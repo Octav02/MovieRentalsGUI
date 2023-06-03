@@ -1,0 +1,30 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/Undo.cpp
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Undo.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Undo.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#include "Undo.h"
+        -:    3:
+        -:    4:
+function _ZN10UndoAdauga4undoEv called 3 returned 100% blocks executed 100%
+        3:    5:void UndoAdauga::undo() {
+        3:    6:    this->repo->remove(this->movie);
+        3:    6-block  0
+call    0 returned 3
+        3:    7:}
+        -:    8:
+        -:    9:
+function _ZN10UndoSterge4undoEv called 1 returned 100% blocks executed 100%
+        1:   10:void UndoSterge::undo() {
+        1:   11:    this->repo->add(this->movie);
+        1:   11-block  0
+call    0 returned 1
+        1:   12:}
+        -:   13:
+        -:   14:
+function _ZN12UndoModifica4undoEv called 1 returned 100% blocks executed 100%
+        1:   15:void UndoModifica::undo() {
+        1:   16:    this->repo->update(this->movie);
+        1:   16-block  0
+call    0 returned 1
+        1:   17:}

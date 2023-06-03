@@ -1,0 +1,203 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/TableModel.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/main.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include "Service.h"
+        -:    4:#include <QAbstractTableModel>
+        -:    5:#include <QTableView>
+        -:    6:
+        -:    7:class TableModel : public QAbstractTableModel {
+        -:    8:private:
+        -:    9:    Service& service;
+        -:   10:public:
+function _ZN10TableModelC2ER7Service called 1 returned 100% blocks executed 100%
+        1:   11:    TableModel(Service& service1) : service{service1} {}
+        1:   11-block  0
+call    0 returned 1
+function _ZNK10TableModel8rowCountERK11QModelIndex called 63 returned 100% blocks executed 100%
+       63:   12:    int rowCount(const QModelIndex &parent = QModelIndex()) const override {
+       63:   13:        return service.getAll().size();
+       63:   13-block  0
+call    0 returned 63
+call    1 returned 63
+        -:   14:    }
+function _ZNK10TableModel11columnCountERK11QModelIndex called 56 returned 100% blocks executed 100%
+       56:   15:    int columnCount(const QModelIndex &parent = QModelIndex()) const override {
+       56:   16:        return 4;
+       56:   16-block  0
+        -:   17:    }
+function _ZNK10TableModel4dataERK11QModelIndexi called 336 returned 100% blocks executed 70%
+      336:   18:    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override {
+      336:   19:        int row = index.row();
+      336:   19-block  0
+call    0 returned 336
+      336:   20:        int column = index.column();
+call    0 returned 336
+      336:   21:        Movie movie = service.getAll()[row];
+call    0 returned 336
+branch  1 taken 336 (fallthrough)
+branch  2 taken 0 (throw)
+      336:   21-block  0
+call    3 returned 336
+call    4 returned 336
+branch  5 taken 336 (fallthrough)
+branch  6 taken 0 (throw)
+      336:   22:        if (role == Qt::DisplayRole) {
+      336:   22-block  0
+branch  0 taken 48 (fallthrough)
+branch  1 taken 288
+       48:   23:            switch (column) {
+       48:   23-block  0
+branch  0 taken 12
+branch  1 taken 12
+branch  2 taken 12
+branch  3 taken 12
+branch  4 taken 0
+       12:   24:                case 0:
+       12:   25:                    return QString::fromStdString(movie.getTitle());
+       12:   25-block  0
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0 (throw)
+       12:   25-block  1
+call    3 returned 12
+branch  4 taken 12 (fallthrough)
+branch  5 taken 0 (throw)
+       12:   25-block  2
+call    6 returned 12
+call    7 returned 12
+call    8 returned 12
+    $$$$$:   25-block  3
+call    9 never executed
+    $$$$$:   25-block  4
+       12:   26:                case 1:
+       12:   27:                    return QString::fromStdString(movie.getGenre());
+       12:   27-block  0
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0 (throw)
+       12:   27-block  1
+call    3 returned 12
+branch  4 taken 12 (fallthrough)
+branch  5 taken 0 (throw)
+       12:   27-block  2
+call    6 returned 12
+call    7 returned 12
+call    8 returned 12
+    $$$$$:   27-block  3
+call    9 never executed
+    $$$$$:   27-block  4
+       12:   28:                case 2:
+       12:   29:                    return QString::fromStdString(std::to_string(movie.getYear()));
+       12:   29-block  0
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0 (throw)
+       12:   29-block  1
+call    3 returned 12
+branch  4 taken 12 (fallthrough)
+branch  5 taken 0 (throw)
+       12:   29-block  2
+call    6 returned 12
+branch  7 taken 12 (fallthrough)
+branch  8 taken 0 (throw)
+       12:   29-block  3
+call    9 returned 12
+call   10 returned 12
+call   11 returned 12
+    $$$$$:   29-block  4
+call   12 never executed
+    $$$$$:   29-block  5
+       12:   30:                case 3:
+       12:   31:                    return QString::fromStdString(movie.getMainActor());
+       12:   31-block  0
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0 (throw)
+       12:   31-block  1
+call    3 returned 12
+branch  4 taken 12 (fallthrough)
+branch  5 taken 0 (throw)
+       12:   31-block  2
+call    6 returned 12
+call    7 returned 12
+call    8 returned 12
+    $$$$$:   31-block  3
+call    9 never executed
+    $$$$$:   31-block  4
+    #####:   32:                default:
+    #####:   33:                    break;
+    %%%%%:   33-block  0
+        -:   34:            }
+        -:   35:        }
+      288:   36:        return QVariant();
+      288:   36-block  0
+call    0 returned 288
+      336:   37:    }
+      336:   37-block  0
+call    0 returned 336
+    $$$$$:   37-block  1
+call    1 never executed
+function _ZNK10TableModel10headerDataEiN2Qt11OrientationEi called 324 returned 100% blocks executed 91%
+      324:   38:    QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override {
+      324:   39:        if (role == Qt::DisplayRole) {
+      324:   39-block  0
+branch  0 taken 54 (fallthrough)
+branch  1 taken 270
+       54:   40:            if (orientation == Qt::Horizontal) {
+       54:   40-block  0
+branch  0 taken 36 (fallthrough)
+branch  1 taken 18
+       36:   41:                switch (section) {
+       36:   41-block  0
+branch  0 taken 9
+branch  1 taken 9
+branch  2 taken 9
+branch  3 taken 9
+branch  4 taken 0
+        9:   42:                    case 0:
+        9:   43:                        return QString("Title");
+        9:   43-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+        9:   44:                    case 1:
+        9:   45:                        return QString("Genre");
+        9:   45-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+        9:   46:                    case 2:
+        9:   47:                        return QString("Year of release");
+        9:   47-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+        9:   48:                    case 3:
+        9:   49:                        return QString("Main actor");
+        9:   49-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+    #####:   50:                    default:
+    #####:   51:                        break;
+    %%%%%:   51-block  0
+        -:   52:                }
+        -:   53:            }
+        -:   54:        }
+      288:   55:        return QVariant();
+      288:   55-block  0
+call    0 returned 288
+        -:   56:    }
+        -:   57:    void update() {
+        -:   58:        emit layoutChanged();
+        -:   59:    }
+        -:   60:
+        -:   61:    void updateInternalData(const vector<Movie> &vector) {
+        -:   62:        beginResetModel();
+        -:   63:        endResetModel();
+        -:   64:    }
+        -:   65:};
+        -:   66:

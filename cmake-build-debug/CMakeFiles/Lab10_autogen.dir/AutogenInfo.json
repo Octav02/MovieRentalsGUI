@@ -410,6 +410,12 @@
 			null
 		],
 		[
+			"/home/octav/CLionProjects/Lab10/TableModel.h",
+			"MU",
+			"EWIEGA46WW/moc_TableModel.cpp",
+			null
+		],
+		[
 			"/home/octav/CLionProjects/Lab10/Tests.h",
 			"MU",
 			"EWIEGA46WW/moc_Tests.cpp",
@@ -506,6 +512,7 @@
 		[ "/home/octav/CLionProjects/Lab10/MovieRepositoryFile.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/Observer.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/Service.cpp", "MU", null ],
+		[ "/home/octav/CLionProjects/Lab10/TableModel.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/Tests.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/Undo.cpp", "MU", null ],
 		[ "/home/octav/CLionProjects/Lab10/Validator.cpp", "MU", null ],

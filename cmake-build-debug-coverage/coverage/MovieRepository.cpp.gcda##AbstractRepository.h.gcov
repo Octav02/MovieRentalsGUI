@@ -1,0 +1,46 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/AbstractRepository.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/MovieRepository.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/MovieRepository.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include "Movie.h"
+        -:    4:#include <vector>
+        -:    5:
+        -:    6:class AbstractRepository {
+        -:    7:protected:
+        -:    8:    vector<Movie> movies;
+        -:    9:public:
+        -:   10:
+       7*:   11:    virtual ~AbstractRepository() =default;
+------------------
+_ZN18AbstractRepositoryD0Ev:
+function _ZN18AbstractRepositoryD0Ev called 0 returned 0% blocks executed 0%
+    #####:   11:    virtual ~AbstractRepository() =default;
+    %%%%%:   11-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN18AbstractRepositoryD2Ev:
+function _ZN18AbstractRepositoryD2Ev called 7 returned 100% blocks executed 100%
+        7:   11:    virtual ~AbstractRepository() =default;
+        7:   11-block  0
+call    0 returned 7
+------------------
+        -:   12:
+        -:   13:    virtual void add(const Movie &movie)=0;
+        -:   14:
+        -:   15:    virtual void remove(const Movie &movie)=0;
+        -:   16:
+        -:   17:    virtual void update(const Movie &movie)=0;
+        -:   18:
+        -:   19:    virtual const vector<Movie> &getAll() const =0;
+        -:   20:
+        -:   21:    virtual int size() const =0;
+        -:   22:
+        -:   23:    virtual const Movie &getMovie(int index) const =0;
+        -:   24:
+        -:   25:    virtual int find(const Movie &movie) const =0;
+        -:   26:
+        -:   27:
+        -:   28:};

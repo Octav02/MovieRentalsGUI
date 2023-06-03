@@ -1,0 +1,21 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/Exceptions.cpp
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Exceptions.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Exceptions.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Exceptions.h"
+        -:    2:
+function _ZlsRSoRK19ValidationException called 0 returned 0% blocks executed 0%
+    #####:    3:std::ostream &operator<<(std::ostream &os, const ValidationException &exception) {
+    #####:    4:    os << exception.message;
+    %%%%%:    4-block  0
+call    0 never executed
+    #####:    5:    return os;
+        -:    6:}
+        -:    7:
+function _ZlsRSoRK19RepositoryException called 0 returned 0% blocks executed 0%
+    #####:    8:std::ostream &operator<<(std::ostream &os, const RepositoryException &exception) {
+    #####:    9:    os << exception.message;
+    %%%%%:    9-block  0
+call    0 never executed
+    #####:   10:    return os;
+        -:   11:}

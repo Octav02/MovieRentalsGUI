@@ -177,6 +177,14 @@ build CMakeFiles/Lab10.dir/Observer.cpp.o: CXX_COMPILER__Lab10_Debug /home/octav
   OBJECT_DIR = CMakeFiles/Lab10.dir
   OBJECT_FILE_DIR = CMakeFiles/Lab10.dir
 
+build CMakeFiles/Lab10.dir/TableModel.cpp.o: CXX_COMPILER__Lab10_Debug /home/octav/CLionProjects/Lab10/TableModel.cpp || cmake_object_order_depends_target_Lab10
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Lab10.dir/TableModel.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -fPIC
+  INCLUDES = -I/home/octav/CLionProjects/Lab10/cmake-build-debug/Lab10_autogen/include -isystem /home/octav/Qt/6.5.0/gcc_64/include/QtCore -isystem /home/octav/Qt/6.5.0/gcc_64/include -isystem /home/octav/Qt/6.5.0/gcc_64/mkspecs/linux-g++ -isystem /home/octav/Qt/6.5.0/gcc_64/include/QtGui -isystem /home/octav/Qt/6.5.0/gcc_64/include/QtWidgets
+  OBJECT_DIR = CMakeFiles/Lab10.dir
+  OBJECT_FILE_DIR = CMakeFiles/Lab10.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Lab10
@@ -185,7 +193,7 @@ build CMakeFiles/Lab10.dir/Observer.cpp.o: CXX_COMPILER__Lab10_Debug /home/octav
 #############################################
 # Link the executable Lab10
 
-build Lab10: CXX_EXECUTABLE_LINKER__Lab10_Debug CMakeFiles/Lab10.dir/Lab10_autogen/mocs_compilation.cpp.o CMakeFiles/Lab10.dir/main.cpp.o CMakeFiles/Lab10.dir/Movie.cpp.o CMakeFiles/Lab10.dir/AbstractRepository.cpp.o CMakeFiles/Lab10.dir/MovieRepository.cpp.o CMakeFiles/Lab10.dir/Exceptions.cpp.o CMakeFiles/Lab10.dir/Tests.cpp.o CMakeFiles/Lab10.dir/Validator.cpp.o CMakeFiles/Lab10.dir/Undo.cpp.o CMakeFiles/Lab10.dir/MovieRepositoryFile.cpp.o CMakeFiles/Lab10.dir/Service.cpp.o CMakeFiles/Lab10.dir/GUI.cpp.o CMakeFiles/Lab10.dir/JustListGUI.cpp.o CMakeFiles/Lab10.dir/WatchlistCRUDGUI.cpp.o CMakeFiles/Lab10.dir/WatchListReadOnlyGUI.cpp.o CMakeFiles/Lab10.dir/Observer.cpp.o | /home/octav/Qt/6.5.0/gcc_64/lib/libQt6Widgets.so.6.5.0 /home/octav/Qt/6.5.0/gcc_64/lib/libQt6Gui.so.6.5.0 /home/octav/Qt/6.5.0/gcc_64/lib/libQt6Core.so.6.5.0 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so || Lab10_autogen Lab10_autogen_timestamp_deps
+build Lab10: CXX_EXECUTABLE_LINKER__Lab10_Debug CMakeFiles/Lab10.dir/Lab10_autogen/mocs_compilation.cpp.o CMakeFiles/Lab10.dir/main.cpp.o CMakeFiles/Lab10.dir/Movie.cpp.o CMakeFiles/Lab10.dir/AbstractRepository.cpp.o CMakeFiles/Lab10.dir/MovieRepository.cpp.o CMakeFiles/Lab10.dir/Exceptions.cpp.o CMakeFiles/Lab10.dir/Tests.cpp.o CMakeFiles/Lab10.dir/Validator.cpp.o CMakeFiles/Lab10.dir/Undo.cpp.o CMakeFiles/Lab10.dir/MovieRepositoryFile.cpp.o CMakeFiles/Lab10.dir/Service.cpp.o CMakeFiles/Lab10.dir/GUI.cpp.o CMakeFiles/Lab10.dir/JustListGUI.cpp.o CMakeFiles/Lab10.dir/WatchlistCRUDGUI.cpp.o CMakeFiles/Lab10.dir/WatchListReadOnlyGUI.cpp.o CMakeFiles/Lab10.dir/Observer.cpp.o CMakeFiles/Lab10.dir/TableModel.cpp.o | /home/octav/Qt/6.5.0/gcc_64/lib/libQt6Widgets.so.6.5.0 /home/octav/Qt/6.5.0/gcc_64/lib/libQt6Gui.so.6.5.0 /home/octav/Qt/6.5.0/gcc_64/lib/libQt6Core.so.6.5.0 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so || Lab10_autogen Lab10_autogen_timestamp_deps
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/home/octav/Qt/6.5.0/gcc_64/lib  /home/octav/Qt/6.5.0/gcc_64/lib/libQt6Widgets.so.6.5.0  /home/octav/Qt/6.5.0/gcc_64/lib/libQt6Gui.so.6.5.0  /home/octav/Qt/6.5.0/gcc_64/lib/libQt6Core.so.6.5.0  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libOpenGL.so
   OBJECT_DIR = CMakeFiles/Lab10.dir

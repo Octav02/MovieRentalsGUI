@@ -19,11 +19,15 @@
 #include "JustListGUI.h"
 #include "WatchListReadOnlyGUI.h"
 #include "Observer.h"
+#include "TableModel.h"
+#include <QHeaderView>
 
 class GUI : public QWidget{
 private:
     Service& service;
     QTableWidget* table = new QTableWidget(0,4);
+    QTableView* tableView = new QTableView();
+    TableModel* model = new TableModel(service);
 
     QPushButton* btnExit = new QPushButton("Exit");
     QPushButton* btnAdd = new QPushButton("Add");

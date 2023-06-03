@@ -1,0 +1,63 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/WatchListReadOnlyGUI.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/GUI.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/GUI.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "GUI.h"
+        -:    3:#include <QPaintEvent>
+        -:    4:#include <QPainter>
+        -:    5:
+        -:    6:class WatchListReadOnlyGUI : public QWidget, public Observer{
+        -:    7:private:
+        -:    8:    QTableWidget* table = new QTableWidget(0,4);
+        -:    9:    Service& service;
+        -:   10:    void initGUI();
+        -:   11:    void loadData();
+        -:   12:    void paintEvent(QPaintEvent* event) override;
+        -:   13:public:
+function _ZN20WatchListReadOnlyGUIC2ER7Service called 0 returned 0% blocks executed 0%
+    #####:   14:    WatchListReadOnlyGUI(Service& service) : service{service} {
+    %%%%%:   14-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   14-block  1
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   14-block  2
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    $$$$$:   14-block  3
+call   11 never executed
+    $$$$$:   14-block  4
+call   12 never executed
+    #####:   15:        service.addObserver(this);
+    %%%%%:   15-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   16:        initGUI();
+    %%%%%:   16-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   17:        loadData();
+    %%%%%:   17-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   18:    }
+    %%%%%:   18-block  0
+    $$$$$:   18-block  1
+call    0 never executed
+    $$$$$:   18-block  2
+call    1 never executed
+        -:   19:    void update() override {
+        -:   20:        loadData();
+        -:   21:        repaint();
+        -:   22:    }
+        -:   23:};

@@ -1,0 +1,255 @@
+        -:    0:Source:/home/octav/Qt/6.5.0/gcc_64/include/QtCore/qitemselectionmodel.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/GUI.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/GUI.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2020 The Qt Company Ltd.
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:
+        -:    4:#ifndef QITEMSELECTIONMODEL_H
+        -:    5:#define QITEMSELECTIONMODEL_H
+        -:    6:
+        -:    7:#include <QtCore/qglobal.h>
+        -:    8:
+        -:    9:#include <QtCore/qabstractitemmodel.h>
+        -:   10:#include <QtCore/qlist.h>
+        -:   11:#include <QtCore/qset.h>
+        -:   12:
+        -:   13:QT_REQUIRE_CONFIG(itemmodel);
+        -:   14:
+        -:   15:QT_BEGIN_NAMESPACE
+        -:   16:
+        -:   17:class Q_CORE_EXPORT QItemSelectionRange
+        -:   18:{
+        -:   19:
+        -:   20:public:
+        -:   21:    QItemSelectionRange() = default;
+        -:   22:    QItemSelectionRange(const QModelIndex &topL, const QModelIndex &bottomR) : tl(topL), br(bottomR) {}
+        -:   23:    explicit QItemSelectionRange(const QModelIndex &index) : tl(index), br(tl) {}
+        -:   24:
+        -:   25:    void swap(QItemSelectionRange &other) noexcept
+        -:   26:    {
+        -:   27:        tl.swap(other.tl);
+        -:   28:        br.swap(other.br);
+        -:   29:    }
+        -:   30:
+        -:   31:    inline int top() const { return tl.row(); }
+        -:   32:    inline int left() const { return tl.column(); }
+        -:   33:    inline int bottom() const { return br.row(); }
+        -:   34:    inline int right() const { return br.column(); }
+        -:   35:    inline int width() const { return br.column() - tl.column() + 1; }
+        -:   36:    inline int height() const { return br.row() - tl.row() + 1; }
+        -:   37:
+        -:   38:    inline const QPersistentModelIndex &topLeft() const { return tl; }
+        -:   39:    inline const QPersistentModelIndex &bottomRight() const { return br; }
+        -:   40:    inline QModelIndex parent() const { return tl.parent(); }
+        -:   41:    inline const QAbstractItemModel *model() const { return tl.model(); }
+        -:   42:
+        -:   43:    inline bool contains(const QModelIndex &index) const
+        -:   44:    {
+        -:   45:        return (parent() == index.parent()
+        -:   46:                && tl.row() <= index.row() && tl.column() <= index.column()
+        -:   47:                && br.row() >= index.row() && br.column() >= index.column());
+        -:   48:    }
+        -:   49:
+        -:   50:    inline bool contains(int row, int column, const QModelIndex &parentIndex) const
+        -:   51:    {
+        -:   52:        return (parent() == parentIndex
+        -:   53:                && tl.row() <= row && tl.column() <= column
+        -:   54:                && br.row() >= row && br.column() >= column);
+        -:   55:    }
+        -:   56:
+        -:   57:    bool intersects(const QItemSelectionRange &other) const;
+        -:   58:    QItemSelectionRange intersected(const QItemSelectionRange &other) const;
+        -:   59:
+        -:   60:
+        -:   61:    inline bool operator==(const QItemSelectionRange &other) const
+        -:   62:        { return (tl == other.tl && br == other.br); }
+        -:   63:    inline bool operator!=(const QItemSelectionRange &other) const
+        -:   64:        { return !operator==(other); }
+        -:   65:
+        -:   66:    inline bool isValid() const
+        -:   67:    {
+        -:   68:        return (tl.isValid() && br.isValid() && tl.parent() == br.parent()
+        -:   69:                && top() <= bottom() && left() <= right());
+        -:   70:    }
+        -:   71:
+        -:   72:    bool isEmpty() const;
+        -:   73:
+        -:   74:    QModelIndexList indexes() const;
+        -:   75:
+        -:   76:private:
+        -:   77:    QPersistentModelIndex tl, br;
+        -:   78:};
+        -:   79:Q_DECLARE_TYPEINFO(QItemSelectionRange, Q_RELOCATABLE_TYPE);
+        -:   80:
+        -:   81:class QItemSelection;
+        -:   82:class QItemSelectionModelPrivate;
+        -:   83:
+        -:   84:class Q_CORE_EXPORT QItemSelectionModel : public QObject
+        -:   85:{
+        -:   86:    Q_OBJECT
+        -:   87:    Q_PROPERTY(QAbstractItemModel *model READ model WRITE setModel NOTIFY modelChanged
+        -:   88:               BINDABLE bindableModel)
+        -:   89:    Q_PROPERTY(bool hasSelection READ hasSelection NOTIFY selectionChanged STORED false
+        -:   90:               DESIGNABLE false)
+        -:   91:    Q_PROPERTY(QModelIndex currentIndex READ currentIndex NOTIFY currentChanged STORED false
+        -:   92:               DESIGNABLE false)
+        -:   93:    Q_PROPERTY(QItemSelection selection READ selection NOTIFY selectionChanged STORED false
+        -:   94:               DESIGNABLE false)
+        -:   95:    Q_PROPERTY(QModelIndexList selectedIndexes READ selectedIndexes NOTIFY selectionChanged
+        -:   96:               STORED false DESIGNABLE false)
+        -:   97:
+        -:   98:    Q_DECLARE_PRIVATE(QItemSelectionModel)
+        -:   99:
+        -:  100:public:
+        -:  101:
+        -:  102:    enum SelectionFlag {
+        -:  103:        NoUpdate       = 0x0000,
+        -:  104:        Clear          = 0x0001,
+        -:  105:        Select         = 0x0002,
+        -:  106:        Deselect       = 0x0004,
+        -:  107:        Toggle         = 0x0008,
+        -:  108:        Current        = 0x0010,
+        -:  109:        Rows           = 0x0020,
+        -:  110:        Columns        = 0x0040,
+        -:  111:        SelectCurrent  = Select | Current,
+        -:  112:        ToggleCurrent  = Toggle | Current,
+        -:  113:        ClearAndSelect = Clear | Select
+        -:  114:    };
+        -:  115:
+        -:  116:    Q_DECLARE_FLAGS(SelectionFlags, SelectionFlag)
+        -:  117:    Q_FLAG(SelectionFlags)
+        -:  118:
+        -:  119:    explicit QItemSelectionModel(QAbstractItemModel *model = nullptr);
+        -:  120:    explicit QItemSelectionModel(QAbstractItemModel *model, QObject *parent);
+        -:  121:    virtual ~QItemSelectionModel();
+        -:  122:
+        -:  123:    QModelIndex currentIndex() const;
+        -:  124:
+        -:  125:    Q_INVOKABLE bool isSelected(const QModelIndex &index) const;
+        -:  126:    Q_INVOKABLE bool isRowSelected(int row, const QModelIndex &parent = QModelIndex()) const;
+        -:  127:    Q_INVOKABLE bool isColumnSelected(int column, const QModelIndex &parent = QModelIndex()) const;
+        -:  128:
+        -:  129:    Q_INVOKABLE bool rowIntersectsSelection(int row, const QModelIndex &parent = QModelIndex()) const;
+        -:  130:    Q_INVOKABLE bool columnIntersectsSelection(int column, const QModelIndex &parent = QModelIndex()) const;
+        -:  131:
+        -:  132:    bool hasSelection() const;
+        -:  133:
+        -:  134:    QModelIndexList selectedIndexes() const;
+        -:  135:    Q_INVOKABLE QModelIndexList selectedRows(int column = 0) const;
+        -:  136:    Q_INVOKABLE QModelIndexList selectedColumns(int row = 0) const;
+        -:  137:    const QItemSelection selection() const;
+        -:  138:
+        -:  139:    const QAbstractItemModel *model() const;
+        -:  140:    QAbstractItemModel *model();
+        -:  141:    QBindable<QAbstractItemModel *> bindableModel();
+        -:  142:
+        -:  143:    void setModel(QAbstractItemModel *model);
+        -:  144:
+        -:  145:public Q_SLOTS:
+        -:  146:    virtual void setCurrentIndex(const QModelIndex &index, QItemSelectionModel::SelectionFlags command);
+        -:  147:    virtual void select(const QModelIndex &index, QItemSelectionModel::SelectionFlags command);
+        -:  148:    virtual void select(const QItemSelection &selection, QItemSelectionModel::SelectionFlags command);
+        -:  149:    virtual void clear();
+        -:  150:    virtual void reset();
+        -:  151:
+        -:  152:    void clearSelection();
+        -:  153:    virtual void clearCurrentIndex();
+        -:  154:
+        -:  155:Q_SIGNALS:
+        -:  156:    void selectionChanged(const QItemSelection &selected, const QItemSelection &deselected);
+        -:  157:    void currentChanged(const QModelIndex &current, const QModelIndex &previous);
+        -:  158:    void currentRowChanged(const QModelIndex &current, const QModelIndex &previous);
+        -:  159:    void currentColumnChanged(const QModelIndex &current, const QModelIndex &previous);
+        -:  160:    void modelChanged(QAbstractItemModel *model);
+        -:  161:
+        -:  162:protected:
+        -:  163:    QItemSelectionModel(QItemSelectionModelPrivate &dd, QAbstractItemModel *model);
+        -:  164:    void emitSelectionChanged(const QItemSelection &newSelection, const QItemSelection &oldSelection);
+        -:  165:
+        -:  166:private:
+        -:  167:    Q_DISABLE_COPY(QItemSelectionModel)
+        -:  168:    Q_PRIVATE_SLOT(d_func(), void _q_columnsAboutToBeRemoved(const QModelIndex&, int, int))
+        -:  169:    Q_PRIVATE_SLOT(d_func(), void _q_rowsAboutToBeRemoved(const QModelIndex&, int, int))
+        -:  170:    Q_PRIVATE_SLOT(d_func(), void _q_columnsAboutToBeInserted(const QModelIndex&, int, int))
+        -:  171:    Q_PRIVATE_SLOT(d_func(), void _q_rowsAboutToBeInserted(const QModelIndex&, int, int))
+        -:  172:    Q_PRIVATE_SLOT(d_func(), void _q_layoutAboutToBeChanged(const QList<QPersistentModelIndex> &parents = QList<QPersistentModelIndex>(), QAbstractItemModel::LayoutChangeHint hint = QAbstractItemModel::NoHint))
+        -:  173:    Q_PRIVATE_SLOT(d_func(), void _q_layoutChanged(const QList<QPersistentModelIndex> &parents = QList<QPersistentModelIndex>(), QAbstractItemModel::LayoutChangeHint hint = QAbstractItemModel::NoHint))
+        -:  174:    Q_PRIVATE_SLOT(d_func(), void _q_modelDestroyed())
+        -:  175:};
+        -:  176:
+        -:  177:Q_DECLARE_OPERATORS_FOR_FLAGS(QItemSelectionModel::SelectionFlags)
+        -:  178:
+        -:  179:// We export each out-of-line method individually to prevent MSVC from
+        -:  180:// exporting the whole QList class.
+        -:  181:class QItemSelection : public QList<QItemSelectionRange>
+        -:  182:{
+        -:  183:public:
+        -:  184:    using QList<QItemSelectionRange>::QList;
+        -:  185:    Q_CORE_EXPORT QItemSelection(const QModelIndex &topLeft, const QModelIndex &bottomRight);
+        -:  186:
+        -:  187:    // reusing QList::swap() here is OK!
+        -:  188:
+        -:  189:    Q_CORE_EXPORT void select(const QModelIndex &topLeft, const QModelIndex &bottomRight);
+        -:  190:    Q_CORE_EXPORT bool contains(const QModelIndex &index) const;
+        -:  191:    Q_CORE_EXPORT QModelIndexList indexes() const;
+        -:  192:    Q_CORE_EXPORT void merge(const QItemSelection &other, QItemSelectionModel::SelectionFlags command);
+        -:  193:    Q_CORE_EXPORT static void split(const QItemSelectionRange &range,
+        -:  194:                      const QItemSelectionRange &other,
+        -:  195:                      QItemSelection *result);
+        -:  196:};
+        -:  197:Q_DECLARE_SHARED(QItemSelection)
+        -:  198:
+        -:  199:#ifndef QT_NO_DEBUG_STREAM
+        -:  200:Q_CORE_EXPORT QDebug operator<<(QDebug, const QItemSelectionRange &);
+        -:  201:#endif
+        -:  202:
+        -:  203:QT_END_NAMESPACE
+        -:  204:
+        -:  205:QT_DECL_METATYPE_EXTERN(QItemSelectionRange, Q_CORE_EXPORT)
+    #####:  206:QT_DECL_METATYPE_EXTERN(QItemSelection, Q_CORE_EXPORT)
+------------------
+_ZN11QMetaTypeIdI14QItemSelectionE14qt_metatype_idEv:
+function _ZN11QMetaTypeIdI14QItemSelectionE14qt_metatype_idEv called 0 returned 0% blocks executed 0%
+    #####:  206:QT_DECL_METATYPE_EXTERN(QItemSelection, Q_CORE_EXPORT)
+    %%%%%:  206-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  206-block  1
+    %%%%%:  206-block  2
+call    3 never executed
+call    4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  206-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  206-block  4
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  206-block  5
+call   15 never executed
+call   16 never executed
+    %%%%%:  206-block  6
+call   17 never executed
+branch 18 never executed
+branch 19 never executed
+    %%%%%:  206-block  7
+call   20 never executed
+    $$$$$:  206-block  8
+call   21 never executed
+    $$$$$:  206-block  9
+------------------
+_Z27qRegisterNormalizedMetaTypeI14QItemSelectionEiRK10QByteArray:
+function _Z27qRegisterNormalizedMetaTypeI14QItemSelectionEiRK10QByteArray called 0 returned 0% blocks executed 0%
+    #####:  206:QT_DECL_METATYPE_EXTERN(QItemSelection, Q_CORE_EXPORT)
+    %%%%%:  206-block  0
+call    0 never executed
+------------------
+        -:  207:
+        -:  208:#endif // QITEMSELECTIONMODEL_H

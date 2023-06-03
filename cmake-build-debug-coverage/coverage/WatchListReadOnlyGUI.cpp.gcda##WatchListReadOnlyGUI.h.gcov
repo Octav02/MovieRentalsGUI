@@ -1,0 +1,31 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/WatchListReadOnlyGUI.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/WatchListReadOnlyGUI.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/WatchListReadOnlyGUI.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "GUI.h"
+        -:    3:#include <QPaintEvent>
+        -:    4:#include <QPainter>
+        -:    5:
+        -:    6:class WatchListReadOnlyGUI : public QWidget, public Observer{
+        -:    7:private:
+        -:    8:    QTableWidget* table = new QTableWidget(0,4);
+        -:    9:    Service& service;
+        -:   10:    void initGUI();
+        -:   11:    void loadData();
+        -:   12:    void paintEvent(QPaintEvent* event) override;
+        -:   13:public:
+        -:   14:    WatchListReadOnlyGUI(Service& service) : service{service} {
+        -:   15:        service.addObserver(this);
+        -:   16:        initGUI();
+        -:   17:        loadData();
+        -:   18:    }
+function _ZN20WatchListReadOnlyGUI6updateEv called 0 returned 0% blocks executed 0%
+    #####:   19:    void update() override {
+    #####:   20:        loadData();
+    %%%%%:   20-block  0
+call    0 never executed
+    #####:   21:        repaint();
+call    0 never executed
+    #####:   22:    }
+        -:   23:};

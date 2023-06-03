@@ -1,0 +1,56 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/JustListGUI.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/GUI.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/GUI.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "GUI.h"
+        -:    3:
+        -:    4:class JustListGUI : public QWidget {
+        -:    5:private:
+        -:    6:    vector<Movie> movies;
+        -:    7:    QTableWidget *table = new QTableWidget(0, 4);
+        -:    8:
+        -:    9:    void initGUI();
+        -:   10:    void loadData();
+        -:   11:public:
+function _ZN11JustListGUIC2ESt6vectorI5MovieSaIS1_EE called 0 returned 0% blocks executed 0%
+    #####:   12:    JustListGUI(vector<Movie> movies) : movies{movies} {
+    %%%%%:   12-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   12-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   12-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   12-block  3
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    $$$$$:   12-block  4
+call   13 never executed
+    $$$$$:   12-block  5
+call   14 never executed
+    #####:   13:        initGUI();
+    %%%%%:   13-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   14:        loadData();
+    %%%%%:   14-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   15:    }
+    %%%%%:   15-block  0
+    $$$$$:   15-block  1
+call    0 never executed
+    $$$$$:   15-block  2
+call    1 never executed
+        -:   16:
+        -:   17:};

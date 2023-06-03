@@ -1,0 +1,34 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/Exceptions.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/GUI.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/GUI.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <string>
+        -:    3:#include <utility>
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+        -:    7:class ValidationException {
+        -:    8:private:
+        -:    9:    std::string message;
+        -:   10:public:
+        -:   11:    ValidationException(std::string message) : message{std::move(message)} {}
+function _ZNK19ValidationException4whatB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:   12:    string what() const { return message; }
+    %%%%%:   12-block  0
+call    0 never executed
+        -:   13:    friend std::ostream &operator<<(std::ostream &os, const ValidationException &exception);
+        -:   14:};
+        -:   15:
+        -:   16:class RepositoryException {
+        -:   17:private:
+        -:   18:    std::string message;
+        -:   19:public:
+        -:   20:    RepositoryException(std::string message) : message{std::move(message)} {}
+function _ZNK19RepositoryException4whatB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:   21:    string what() const { return message; }
+    %%%%%:   21-block  0
+call    0 never executed
+        -:   22:    friend std::ostream &operator<<(std::ostream &os, const RepositoryException &exception);
+        -:   23:
+        -:   24:};

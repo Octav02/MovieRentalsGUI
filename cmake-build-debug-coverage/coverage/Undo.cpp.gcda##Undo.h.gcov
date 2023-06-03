@@ -1,0 +1,53 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/Undo.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Undo.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Undo.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include "MovieRepositoryFile.h"
+        -:    4:
+        -:    5:
+        -:    6:class ActiuneUndo {
+        -:    7:public :
+        -:    8:    virtual void undo() = 0;
+      14*:    9:    virtual ~ActiuneUndo() = default;
+------------------
+_ZN11ActiuneUndoD0Ev:
+function _ZN11ActiuneUndoD0Ev called 0 returned 0% blocks executed 0%
+    #####:    9:    virtual ~ActiuneUndo() = default;
+    %%%%%:    9-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN11ActiuneUndoD2Ev:
+function _ZN11ActiuneUndoD2Ev called 14 returned 100% blocks executed 100%
+       14:    9:    virtual ~ActiuneUndo() = default;
+------------------
+        -:   10:};
+        -:   11:
+        -:   12:class UndoAdauga : public ActiuneUndo {
+        -:   13:private:
+        -:   14:    Movie movie;
+        -:   15:    AbstractRepository* repo;
+        -:   16:public:
+        -:   17:    UndoAdauga(AbstractRepository* repo, const Movie& movie) :  repo{repo}, movie{movie} {};
+        -:   18:    void undo() override;
+        -:   19:};
+        -:   20:
+        -:   21:class UndoSterge : public ActiuneUndo {
+        -:   22:private:
+        -:   23:    Movie movie;
+        -:   24:    AbstractRepository* repo;
+        -:   25:public:
+        -:   26:    UndoSterge(AbstractRepository* repo, const Movie& movie) : repo{repo}, movie{movie} {};
+        -:   27:    void undo() override;
+        -:   28:};
+        -:   29:
+        -:   30:class UndoModifica : public ActiuneUndo {
+        -:   31:private:
+        -:   32:    Movie movie;
+        -:   33:    AbstractRepository* repo;
+        -:   34:public:
+        -:   35:    UndoModifica(AbstractRepository* repo, const Movie& movie) : repo{repo}, movie{movie} {};
+        -:   36:    void undo() override;
+        -:   37:};

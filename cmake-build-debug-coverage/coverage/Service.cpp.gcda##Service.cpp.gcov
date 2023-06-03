@@ -1,0 +1,1233 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/Service.cpp
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Service.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#include <algorithm>
+        -:    3:#include <chrono>
+        -:    4:#include "Service.h"
+        -:    5:
+        -:    6:
+function _ZN7Service8addMovieERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 9 returned 78% blocks executed 72%
+        9:    7:void Service::addMovie(const string &title, const string &genre, int year, const string &mainActor) {
+        9:    8:    Movie movie(title, genre, year, mainActor);
+        9:    8-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:    9:    this->validator.validateMovie(movie);
+        9:    9-block  0
+call    0 returned 9
+branch  1 taken 8 (fallthrough)
+branch  2 taken 1 (throw)
+        8:   10:    this->repo->add(movie);
+        8:   10-block  0
+call    0 returned 8
+branch  1 taken 7 (fallthrough)
+branch  2 taken 1 (throw)
+        7:   11:    UndoAdauga* undoAdauga = new UndoAdauga(this->repo, movie);
+        7:   11-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:   11-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   11-block  2
+call    6 never executed
+        7:   12:    this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoAdauga));
+        7:   12-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 7 (fallthrough)
+branch  3 taken 0 (throw)
+        7:   12-block  1
+call    4 returned 7
+    $$$$$:   12-block  2
+call    5 never executed
+    $$$$$:   12-block  3
+        9:   13:}
+call    0 returned 7
+        2:   13-block  0
+call    1 returned 2
+        -:   14:
+        -:   15:
+function _ZN7Service11removeMovieERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 6 returned 83% blocks executed 71%
+        6:   16:void Service::removeMovie(const string &title, const string &genre, int year, const string &mainActor) {
+        6:   17:    Movie movie(title, genre, year, mainActor);
+        6:   17-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:   18:    this->repo->remove(movie);
+        6:   18-block  0
+call    0 returned 6
+branch  1 taken 5 (fallthrough)
+branch  2 taken 1 (throw)
+        5:   19:    UndoSterge* undoSterge = new UndoSterge(this->repo, movie);
+        5:   19-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   19-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   19-block  2
+call    6 never executed
+        5:   20:    this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoSterge));
+        5:   20-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:   20-block  1
+call    4 returned 5
+    $$$$$:   20-block  2
+call    5 never executed
+    $$$$$:   20-block  3
+        6:   21:}
+call    0 returned 5
+        1:   21-block  0
+call    1 returned 1
+        -:   22:
+function _ZN7Service11updateMovieERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 4 returned 50% blocks executed 81%
+        4:   23:void Service::updateMovie(const string &title, const string &genre, int year, const string &mainActor) {
+        4:   24:    Movie movie(title, genre, year, mainActor);
+        4:   24-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   25:    int index = this->repo->find(movie);
+        4:   25-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   26:    Movie oldMovie;
+        4:   26-block  0
+call    0 returned 4
+        4:   27:    if (index != -1) {
+branch  0 taken 3 (fallthrough)
+branch  1 taken 1
+        3:   28:        oldMovie = this->repo->getMovie(index);
+        3:   28-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   28-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   29:    }
+        4:   30:    this->validator.validateMovie(movie);
+        4:   30-block  0
+call    0 returned 4
+branch  1 taken 3 (fallthrough)
+branch  2 taken 1 (throw)
+        3:   31:    this->repo->update(movie);
+        3:   31-block  0
+call    0 returned 3
+branch  1 taken 2 (fallthrough)
+branch  2 taken 1 (throw)
+        2:   32:    UndoModifica* undoModifica = new UndoModifica(this->repo, oldMovie);
+        2:   32-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   32-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   32-block  2
+call    6 never executed
+        2:   33:    this->undoActions.push_back(unique_ptr<ActiuneUndo>(undoModifica));
+        2:   33-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   33-block  1
+call    4 returned 2
+    $$$$$:   33-block  2
+call    5 never executed
+    $$$$$:   33-block  3
+        6:   34:}
+call    0 returned 2
+call    1 returned 2
+        2:   34-block  0
+call    2 returned 2
+        2:   34-block  1
+call    3 returned 2
+        -:   35:
+function _ZNK7Service6getAllEv called 403 returned 100% blocks executed 100%
+      403:   36:const vector<Movie> &Service::getAll() const {
+      403:   37:    return this->repo->getAll();
+      403:   37-block  0
+call    0 returned 403
+        -:   38:}
+        -:   39:
+function _ZNK7Service4sizeEv called 1 returned 100% blocks executed 100%
+        1:   40:int Service::size() const {
+        1:   41:    return this->repo->size();
+        1:   41-block  0
+call    0 returned 1
+        -:   42:}
+        -:   43:
+function _ZNK7Service8getMovieEi called 3 returned 100% blocks executed 100%
+        3:   44:const Movie &Service::getMovie(int index) const {
+        3:   45:    return this->repo->getMovie(index);
+        3:   45-block  0
+call    0 returned 3
+        -:   46:}
+        -:   47:
+function _ZNK7Service4findERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 52%
+        1:   48:int Service::find(const string & title) const {
+        2:   49:    Movie movie(title, "", 0, "");
+        1:   49-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   49-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   49-block  2
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+    $$$$$:   49-block  3
+    $$$$$:   49-block  4
+    $$$$$:   49-block  5
+    $$$$$:   49-block  6
+        2:   50:    return this->repo->find(movie);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   50-block  0
+        1:   50-block  1
+        1:   51:}
+        1:   51-block  0
+call    0 returned 1
+    $$$$$:   51-block  1
+call    1 never executed
+        -:   52:
+function _ZN7Service16getMoviesByTitleERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 67%
+        1:   53:vector<Movie> Service::getMoviesByTitle(const string& title) {
+        1:   54:    vector<Movie> movies = repo->getAll();
+        1:   54-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   54-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   55:    vector<Movie> moviesByTitle;
+        1:   55-block  0
+call    0 returned 1
+function _ZZN7Service16getMoviesByTitleERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK5MovieE_clESA_ called 3 returned 100% blocks executed 100%
+        1:   56:    copy_if(movies.begin(), movies.end(), back_inserter(moviesByTitle), [title](const Movie&  movie) {
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   56-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   56-block  1
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+        1:   56-block  2
+call   11 returned 1
+    $$$$$:   56-block  3
+call   12 never executed
+    $$$$$:   56-block  4
+        3:   57:        return movie.getTitle() == title;
+        3:   57-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        -:   58:    });
+        2:   59:    return moviesByTitle;
+        1:   59-block  0
+        1:   60:}
+        1:   60-block  0
+call    0 returned 1
+    $$$$$:   60-block  1
+call    1 never executed
+    $$$$$:   60-block  2
+call    2 never executed
+        -:   61:
+function _ZN7Service15getMoviesByYearEi called 1 returned 100% blocks executed 75%
+        1:   62:vector<Movie> Service::getMoviesByYear(int year) {
+        1:   63:    vector<Movie> movies = repo->getAll();
+        1:   63-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   63-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   64:    vector<Movie> moviesByYear;
+        1:   64-block  0
+call    0 returned 1
+function _ZZN7Service15getMoviesByYearEiENKUlRK5MovieE_clES2_ called 3 returned 100% blocks executed 100%
+        1:   65:    copy_if(movies.begin(), movies.end(), back_inserter(moviesByYear), [year](const Movie&  movie) {
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   65-block  0
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        3:   66:        return movie.getYear() == year;
+        3:   66-block  0
+call    0 returned 3
+        -:   67:    });
+        2:   68:    return moviesByYear;
+        1:   68-block  0
+        1:   68-block  1
+        1:   69:}
+        1:   69-block  0
+call    0 returned 1
+    $$$$$:   69-block  1
+call    1 never executed
+    $$$$$:   69-block  2
+call    2 never executed
+        -:   70:
+function _ZN7Service17sortMoviesByTitleEb called 2 returned 100% blocks executed 92%
+        2:   71:vector<Movie> Service::sortMoviesByTitle(bool ascending) {
+        2:   72:    vector<Movie> movies = repo->getAll();
+        2:   72-block  0
+call    0 returned 2
+call    1 returned 2
+        2:   73:    if (ascending) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+function _ZZN7Service17sortMoviesByTitleEbENKUlRK5MovieS2_E_clES2_S2_ called 5 returned 100% blocks executed 80%
+        1:   74:        sort(movies.begin(), movies.end(), [](const Movie&  movie1, const Movie&  movie2) {
+        1:   74-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        5:   75:            return movie1.getTitle() < movie2.getTitle();
+        5:   75-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:   75-block  1
+call    4 returned 5
+call    5 returned 5
+call    6 returned 5
+        5:   75-block  2
+    $$$$$:   75-block  3
+call    7 never executed
+        -:   76:        });
+        -:   77:    } else {
+function _ZZN7Service17sortMoviesByTitleEbENKUlRK5MovieS2_E0_clES2_S2_ called 4 returned 100% blocks executed 80%
+        1:   78:        sort(movies.begin(), movies.end(), [](const Movie&  movie1, const Movie&  movie2) {
+        1:   78-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        4:   79:            return movie1.getTitle() > movie2.getTitle();
+        4:   79-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:   79-block  1
+call    4 returned 4
+call    5 returned 4
+call    6 returned 4
+        4:   79-block  2
+    $$$$$:   79-block  3
+call    7 never executed
+        -:   80:        });
+        -:   81:    }
+        2:   82:    return movies;
+        2:   82-block  0
+        2:   82-block  1
+    =====:   83:}
+    $$$$$:   83-block  0
+call    0 never executed
+        -:   84:
+function _ZN7Service17sortMoviesByGenreEb called 2 returned 100% blocks executed 92%
+        2:   85:vector<Movie> Service::sortMoviesByGenre(bool ascending) {
+        2:   86:    vector<Movie> movies = repo->getAll();
+        2:   86-block  0
+call    0 returned 2
+call    1 returned 2
+        2:   87:    if (ascending) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+function _ZZN7Service17sortMoviesByGenreEbENKUlRK5MovieS2_E_clES2_S2_ called 5 returned 100% blocks executed 80%
+        1:   88:        sort(movies.begin(), movies.end(), [](const Movie&  movie1, const Movie&  movie2) {
+        1:   88-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        5:   89:            return movie1.getGenre() < movie2.getGenre();
+        5:   89-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:   89-block  1
+call    4 returned 5
+call    5 returned 5
+call    6 returned 5
+        5:   89-block  2
+    $$$$$:   89-block  3
+call    7 never executed
+        -:   90:        });
+        -:   91:    } else {
+function _ZZN7Service17sortMoviesByGenreEbENKUlRK5MovieS2_E0_clES2_S2_ called 4 returned 100% blocks executed 80%
+        1:   92:        sort(movies.begin(), movies.end(), [](const Movie& movie1, const Movie&  movie2) {
+        1:   92-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        4:   93:            return movie1.getGenre() > movie2.getGenre();
+        4:   93-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:   93-block  1
+call    4 returned 4
+call    5 returned 4
+call    6 returned 4
+        4:   93-block  2
+    $$$$$:   93-block  3
+call    7 never executed
+        -:   94:        });
+        -:   95:    }
+        2:   96:    return movies;
+        2:   96-block  0
+        2:   96-block  1
+    =====:   97:}
+    $$$$$:   97-block  0
+call    0 never executed
+        -:   98:
+function _ZN7Service16sortMoviesByYearEb called 2 returned 100% blocks executed 92%
+        2:   99:vector<Movie> Service::sortMoviesByYear(bool ascending) {
+        2:  100:    vector<Movie> movies = repo->getAll();
+        2:  100-block  0
+call    0 returned 2
+call    1 returned 2
+        2:  101:    if (ascending) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+function _ZZN7Service16sortMoviesByYearEbENKUlRK5MovieS2_E_clES2_S2_ called 5 returned 100% blocks executed 100%
+        1:  102:        sort(movies.begin(), movies.end(), [](const Movie&  movie1, const Movie&  movie2) {
+        1:  102-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        5:  103:            return movie1.getYear() < movie2.getYear();
+        5:  103-block  0
+call    0 returned 5
+call    1 returned 5
+        -:  104:        });
+        -:  105:    } else {
+function _ZZN7Service16sortMoviesByYearEbENKUlRK5MovieS2_E0_clES2_S2_ called 4 returned 100% blocks executed 100%
+        1:  106:        sort(movies.begin(), movies.end(), [](const Movie&  movie1, const Movie&  movie2) {
+        1:  106-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        4:  107:            return movie1.getYear() > movie2.getYear();
+        4:  107-block  0
+call    0 returned 4
+call    1 returned 4
+        -:  108:        });
+        -:  109:    }
+        2:  110:    return movies;
+        2:  110-block  0
+        2:  110-block  1
+    =====:  111:}
+    $$$$$:  111-block  0
+call    0 never executed
+        -:  112:
+function _ZN7Service21sortMoviesByMainActorEb called 2 returned 100% blocks executed 92%
+        2:  113:vector<Movie> Service::sortMoviesByMainActor(bool ascending) {
+        2:  114:    vector<Movie> movies = repo->getAll();
+        2:  114-block  0
+call    0 returned 2
+call    1 returned 2
+        2:  115:    if (ascending) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+function _ZZN7Service21sortMoviesByMainActorEbENKUlRK5MovieS2_E_clES2_S2_ called 5 returned 100% blocks executed 80%
+        1:  116:        sort(movies.begin(), movies.end(), [](const Movie&  movie1, const Movie&  movie2) {
+        1:  116-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        5:  117:            return movie1.getMainActor() < movie2.getMainActor();
+        5:  117-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:  117-block  1
+call    4 returned 5
+call    5 returned 5
+call    6 returned 5
+        5:  117-block  2
+    $$$$$:  117-block  3
+call    7 never executed
+        -:  118:        });
+        -:  119:    } else {
+function _ZZN7Service21sortMoviesByMainActorEbENKUlRK5MovieS2_E0_clES2_S2_ called 4 returned 100% blocks executed 80%
+        1:  120:        sort(movies.begin(), movies.end(), [](const Movie&  movie1, const Movie&  movie2) {
+        1:  120-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        4:  121:            return movie1.getMainActor() > movie2.getMainActor();
+        4:  121-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:  121-block  1
+call    4 returned 4
+call    5 returned 4
+call    6 returned 4
+        4:  121-block  2
+    $$$$$:  121-block  3
+call    7 never executed
+        -:  122:        });
+        -:  123:    }
+        2:  124:    return movies;
+        2:  124-block  0
+        2:  124-block  1
+    =====:  125:}
+    $$$$$:  125-block  0
+call    0 never executed
+        -:  126:
+function _ZN7Service14addToWatchlistERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 3 returned 33% blocks executed 100%
+        3:  127:void Service::addToWatchlist(const string& title, const string& genre, int year, const string& mainActor) {
+        3:  128:    Movie movie = Movie(title, genre, year, mainActor);
+        3:  128-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  129:    validator.validateMovie(movie);
+        3:  129-block  0
+call    0 returned 3
+branch  1 taken 2 (fallthrough)
+branch  2 taken 1 (throw)
+        2:  130:    watchlist.add(movie);
+        2:  130-block  0
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1 (throw)
+        1:  131:    notify();
+        1:  131-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  132:}
+        1:  132-block  0
+call    0 returned 1
+        2:  132-block  1
+call    1 returned 2
+        -:  133:
+function _ZN7Service19deleteFromWatchlistERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 0% blocks executed 46%
+        1:  134:void Service::deleteFromWatchlist(const string& title) {
+        2:  135:    Movie movie =  Movie(title, "", 0, "");
+        1:  135-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  135-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  135-block  2
+call    8 returned 1
+branch  9 taken 1 (fallthrough)
+branch 10 taken 0 (throw)
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+    $$$$$:  135-block  3
+    $$$$$:  135-block  4
+    $$$$$:  135-block  5
+    $$$$$:  135-block  6
+        1:  136:    watchlist.remove(movie);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    #####:  137:    notify();
+    %%%%%:  137-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+       1*:  138:}
+    %%%%%:  138-block  0
+call    0 never executed
+        1:  138-block  1
+call    1 returned 1
+        -:  139:
+function _ZN7Service12getWatchlistEv called 2 returned 100% blocks executed 100%
+        2:  140:vector<Movie> Service::getWatchlist() {
+        2:  141:    return watchlist.getAll();
+        2:  141-block  0
+call    0 returned 2
+call    1 returned 2
+        -:  142:}
+        -:  143:
+function _ZN7Service17generateWatchlistEi called 1 returned 100% blocks executed 83%
+        1:  144:void Service::generateWatchlist(int numberOfMovies) {
+        -:  145:    //Generate numberOfMovies random titles, genre, year and mainActor and add them to the watchlist
+        -:  146:
+        1:  147:    auto seed = chrono::steady_clock::now().time_since_epoch().count();
+        1:  147-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:  148:    srand(seed);
+call    0 returned 1
+        -:  149:
+        3:  150:    for (int i = 0; i < numberOfMovies; i++) {
+        3:  150-block  0
+branch  0 taken 2
+branch  1 taken 1 (fallthrough)
+        -:  151:        //Generate random titles using seed
+        2:  152:        string title;
+        2:  152-block  0
+call    0 returned 2
+        2:  153:        int titleLength = rand() % 20 + 1;
+call    0 returned 2
+       13:  154:        for (int j = 0; j < titleLength; j++) {
+       11:  154-block  0
+       13:  154-block  1
+branch  0 taken 11
+branch  1 taken 2 (fallthrough)
+       11:  155:            title += (char) (rand() % 26 + 97);
+       11:  155-block  0
+call    0 returned 11
+call    1 returned 11
+branch  2 taken 11 (fallthrough)
+branch  3 taken 0 (throw)
+        -:  156:        }
+        -:  157:
+        -:  158:        //Generate random genre
+        2:  159:        string genre;
+        2:  159-block  0
+call    0 returned 2
+        2:  160:        int genreLength = rand() % 20 + 1;
+call    0 returned 2
+       32:  161:        for (int j = 0; j < genreLength; j++) {
+       30:  161-block  0
+       32:  161-block  1
+branch  0 taken 30
+branch  1 taken 2 (fallthrough)
+       30:  162:            genre += (char) (rand() % 26 + 97);
+       30:  162-block  0
+call    0 returned 30
+call    1 returned 30
+branch  2 taken 30 (fallthrough)
+branch  3 taken 0 (throw)
+        -:  163:        }
+        -:  164:
+        -:  165:        //Generate random year
+        2:  166:        int year = rand() % 200 + 1900;
+        2:  166-block  0
+call    0 returned 2
+        -:  167:
+        -:  168:        //Generate random mainActor
+        2:  169:        string mainActor;
+call    0 returned 2
+        2:  170:        int mainActorLength = rand() % 20 + 1;
+call    0 returned 2
+       27:  171:        for (int j = 0; j < mainActorLength; j++) {
+       25:  171-block  0
+       27:  171-block  1
+branch  0 taken 25
+branch  1 taken 2 (fallthrough)
+       25:  172:            mainActor += (char) (rand() % 26 + 97);
+       25:  172-block  0
+call    0 returned 25
+call    1 returned 25
+branch  2 taken 25 (fallthrough)
+branch  3 taken 0 (throw)
+        -:  173:        }
+        -:  174:
+        2:  175:        Movie movie = Movie(title, genre, year, mainActor);
+        2:  175-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  176:        watchlist.add(movie);
+        2:  176-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  177:    }
+        2:  177-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+    $$$$$:  177-block  1
+call    4 never executed
+    $$$$$:  177-block  2
+call    5 never executed
+    $$$$$:  177-block  3
+call    6 never executed
+    $$$$$:  177-block  4
+call    7 never executed
+        1:  178:    notify();
+        1:  178-block  0
+call    0 returned 1
+        1:  179:}
+        -:  180:
+function _ZN7Service19saveWatchlistToFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 62%
+        1:  181:void Service::saveWatchlistToFile(const string& filename) {
+        1:  182:    ofstream file(filename);
+        1:  182-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  183:    if (!file.is_open()) {
+        1:  183-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  183-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    #####:  184:        throw std::runtime_error("Could not open file");
+    %%%%%:  184-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  184-block  1
+call    4 never executed
+    $$$$$:  184-block  2
+call    5 never executed
+        -:  185:    }
+        1:  186:    vector<Movie> movies = watchlist.getAll();
+        1:  186-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  186-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        4:  187:    for (const Movie& movie : movies) {
+        1:  187-block  0
+call    0 returned 1
+call    1 returned 1
+        3:  187-block  1
+call    2 returned 3
+        4:  187-block  2
+call    3 returned 4
+branch  4 taken 3
+branch  5 taken 1 (fallthrough)
+        6:  188:        file << movie.getTitle() << "," << movie.getGenre() << "," << movie.getYear() << "," << movie.getMainActor()
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  188-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  188-block  1
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  188-block  2
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:  188-block  3
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:  188-block  4
+call   15 returned 3
+branch 16 taken 3 (fallthrough)
+branch 17 taken 0 (throw)
+        3:  188-block  5
+call   18 returned 3
+branch 19 taken 3 (fallthrough)
+branch 20 taken 0 (throw)
+        3:  188-block  6
+call   21 returned 3
+branch 22 taken 3 (fallthrough)
+branch 23 taken 0 (throw)
+        3:  188-block  7
+call   24 returned 3
+branch 25 taken 3 (fallthrough)
+branch 26 taken 0 (throw)
+        3:  188-block  8
+call   27 returned 3
+branch 28 taken 3 (fallthrough)
+branch 29 taken 0 (throw)
+        3:  188-block  9
+call   30 returned 3
+branch 31 taken 3 (fallthrough)
+branch 32 taken 0 (throw)
+        3:  188-block 10
+call   33 returned 3
+call   34 returned 3
+call   35 returned 3
+call   36 returned 3
+    $$$$$:  188-block 11
+call   37 never executed
+    $$$$$:  188-block 12
+    $$$$$:  188-block 13
+call   38 never executed
+    $$$$$:  188-block 14
+    $$$$$:  188-block 15
+call   39 never executed
+    $$$$$:  188-block 16
+        3:  189:             << endl;
+        3:  189-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  190:    }
+        1:  191:    file.close();
+        1:  191-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  192:}
+        1:  192-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  192-block  1
+call    2 never executed
+    $$$$$:  192-block  2
+call    3 never executed
+        -:  193:
+function _ZN7Service6doUndoEv called 6 returned 83% blocks executed 92%
+        6:  194:void Service::doUndo() {
+        6:  195:    if (undoActions.empty()) {
+        6:  195-block  0
+call    0 returned 6
+branch  1 taken 1 (fallthrough)
+branch  2 taken 5
+        1:  196:        throw std::runtime_error("No more undos");
+        1:  196-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  196-block  1
+call    4 returned 0
+    $$$$$:  196-block  2
+call    5 never executed
+        -:  197:    }
+        5:  198:    undoActions.back()->undo();
+        5:  198-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+        5:  199:    undoActions.pop_back();
+call    0 returned 5
+        5:  200:}
+        -:  201:
+       3*:  202:Service::~Service() {
+        -:  203://    delete repo;
+       3*:  204:}
+------------------
+_ZN7ServiceD0Ev:
+function _ZN7ServiceD0Ev called 0 returned 0% blocks executed 0%
+    #####:  202:Service::~Service() {
+        -:  203://    delete repo;
+    #####:  204:}
+    %%%%%:  204-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN7ServiceD2Ev:
+function _ZN7ServiceD2Ev called 3 returned 100% blocks executed 100%
+        3:  202:Service::~Service() {
+        -:  203://    delete repo;
+        3:  204:}
+        3:  204-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+------------------
+        -:  205:
+function _ZN7Service15getMoviesByTypeENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 23%
+        1:  206:map<string, vector<Movie>> Service::getMoviesByType(string type) {
+        1:  207:    map<string, vector<Movie>> moviesByType;
+        1:  207-block  0
+call    0 returned 1
+        1:  208:    if (type == "Title") {
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    #####:  209:        vector<Movie> movies = repo->getAll();
+    %%%%%:  209-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  209-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN7Service15getMoviesByTypeENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK5MovieE_clES8_ called 0 returned 0% blocks executed 0%
+    #####:  210:        std::copy_if(movies.begin(), movies.end(), movies.begin(), [](const Movie& movie) {
+    %%%%%:  210-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  211:            return movie.getTitle() == movie.getTitle();
+    %%%%%:  211-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  211-block  1
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    %%%%%:  211-block  2
+    $$$$$:  211-block  3
+call    7 never executed
+        -:  212:        });
+    #####:  213:        for (const Movie& movie : movies) {
+    %%%%%:  213-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  213-block  1
+call    2 never executed
+    %%%%%:  213-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  214:            moviesByType[movie.getTitle()].push_back(movie);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  214-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  214-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  214-block  2
+call    9 never executed
+call   10 never executed
+    $$$$$:  214-block  3
+call   11 never executed
+    $$$$$:  214-block  4
+        -:  215:        }
+    #####:  216:    }
+    %%%%%:  216-block  0
+call    0 never executed
+    $$$$$:  216-block  1
+call    1 never executed
+        1:  217:    else if (type == "Genre") {
+        1:  217-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        1:  218:        vector<Movie> movies = repo->getAll();
+        1:  218-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  218-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+function _ZZN7Service15getMoviesByTypeENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK5MovieE0_clES8_ called 2 returned 100% blocks executed 80%
+        1:  219:        std::copy_if(movies.begin(), movies.end(), movies.begin(), [](const Movie& movie) {
+        1:  219-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  220:            return movie.getGenre() == movie.getGenre();
+        2:  220-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  220-block  1
+call    4 returned 2
+call    5 returned 2
+call    6 returned 2
+        2:  220-block  2
+    $$$$$:  220-block  3
+call    7 never executed
+        -:  221:        });
+        3:  222:        for (const Movie& movie : movies) {
+        1:  222-block  0
+call    0 returned 1
+call    1 returned 1
+        2:  222-block  1
+call    2 returned 2
+        3:  222-block  2
+call    3 returned 3
+branch  4 taken 2
+branch  5 taken 1 (fallthrough)
+        2:  223:            moviesByType[movie.getGenre()].push_back(movie);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  223-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  223-block  1
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:  223-block  2
+call    9 returned 2
+call   10 returned 2
+    $$$$$:  223-block  3
+call   11 never executed
+    $$$$$:  223-block  4
+        -:  224:        }
+        1:  225:    }
+        1:  225-block  0
+call    0 returned 1
+    $$$$$:  225-block  1
+call    1 never executed
+    #####:  226:    else if (type == "Year") {
+    %%%%%:  226-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  227:        vector<Movie> movies = repo->getAll();
+    %%%%%:  227-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  227-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN7Service15getMoviesByTypeENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK5MovieE1_clES8_ called 0 returned 0% blocks executed 0%
+    #####:  228:        std::copy_if(movies.begin(), movies.end(), movies.begin(), [](const Movie& movie) {
+    %%%%%:  228-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  229:            return movie.getYear() == movie.getYear();
+    %%%%%:  229-block  0
+call    0 never executed
+call    1 never executed
+        -:  230:        });
+    #####:  231:        for (const Movie& movie : movies) {
+    %%%%%:  231-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  231-block  1
+call    2 never executed
+    %%%%%:  231-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  232:            moviesByType[to_string(movie.getYear())].push_back(movie);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  232-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  232-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  232-block  2
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  232-block  3
+call   12 never executed
+call   13 never executed
+    $$$$$:  232-block  4
+call   14 never executed
+    $$$$$:  232-block  5
+        -:  233:        }
+    #####:  234:    }
+    %%%%%:  234-block  0
+call    0 never executed
+    $$$$$:  234-block  1
+call    1 never executed
+    #####:  235:    else if (type == "Main Actor") {
+    %%%%%:  235-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  236:        vector<Movie> movies = repo->getAll();
+    %%%%%:  236-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  236-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN7Service15getMoviesByTypeENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK5MovieE2_clES8_ called 0 returned 0% blocks executed 0%
+    #####:  237:        std::copy_if(movies.begin(), movies.end(), movies.begin(), [](const Movie& movie) {
+    %%%%%:  237-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  238:            return movie.getMainActor() == movie.getMainActor();
+    %%%%%:  238-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  238-block  1
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    %%%%%:  238-block  2
+    $$$$$:  238-block  3
+call    7 never executed
+        -:  239:        });
+    #####:  240:        for (const Movie& movie : movies) {
+    %%%%%:  240-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  240-block  1
+call    2 never executed
+    %%%%%:  240-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  241:            moviesByType[movie.getMainActor()].push_back(movie);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  241-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  241-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  241-block  2
+call    9 never executed
+call   10 never executed
+    $$$$$:  241-block  3
+call   11 never executed
+    $$$$$:  241-block  4
+        -:  242:        }
+    #####:  243:    }
+    %%%%%:  243-block  0
+call    0 never executed
+    $$$$$:  243-block  1
+call    1 never executed
+        1:  244:    return moviesByType;
+        1:  244-block  0
+        1:  244-block  1
+    =====:  245:}
+    $$$$$:  245-block  0
+call    0 never executed
+        -:  246:
+function _ZN7Service16getMoviesByGenreERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  247:vector<Movie> Service::getMoviesByGenre(const string &genre) {
+    #####:  248:    vector<Movie> movies = repo->getAll();
+    %%%%%:  248-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  248-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  249:    vector<Movie> moviesByGenre;
+    %%%%%:  249-block  0
+call    0 never executed
+function _ZZN7Service16getMoviesByGenreERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK5MovieE_clESA_ called 0 returned 0% blocks executed 0%
+    #####:  250:    copy_if(movies.begin(), movies.end(), back_inserter(moviesByGenre), [genre](const Movie&  movie) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  250-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  250-block  1
+call    6 never executed
+call    7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:  250-block  2
+call   11 never executed
+    $$$$$:  250-block  3
+call   12 never executed
+    $$$$$:  250-block  4
+    #####:  251:        return movie.getGenre() == genre;
+    %%%%%:  251-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  252:    });
+    #####:  253:    return moviesByGenre;
+    %%%%%:  253-block  0
+    #####:  254:}
+    %%%%%:  254-block  0
+call    0 never executed
+    $$$$$:  254-block  1
+call    1 never executed
+    $$$$$:  254-block  2
+call    2 never executed

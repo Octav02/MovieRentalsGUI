@@ -1,0 +1,42 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/Observer.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/main.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <vector>
+        -:    3:using std::vector;
+        -:    4:
+        -:    5:class Observer {
+        -:    6:public:
+        -:    7:    virtual void update() = 0;
+        -:    8:    virtual ~Observer() = default;
+        -:    9:};
+        -:   10:
+        -:   11:class Observable {
+        -:   12:private:
+        -:   13:    vector<Observer*> observers;
+        -:   14:public:
+        -:   15:    void addObserver(Observer* observer) {
+        -:   16:        observers.push_back(observer);
+        -:   17:    }
+        -:   18:    void notify() {
+        -:   19:        for (auto observer: observers) {
+        -:   20:            observer->update();
+        -:   21:        }
+        -:   22:    }
+       3*:   23:    virtual ~Observable() = default;
+------------------
+_ZN10ObservableD0Ev:
+function _ZN10ObservableD0Ev called 0 returned 0% blocks executed 0%
+    #####:   23:    virtual ~Observable() = default;
+    %%%%%:   23-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN10ObservableD2Ev:
+function _ZN10ObservableD2Ev called 3 returned 100% blocks executed 100%
+        3:   23:    virtual ~Observable() = default;
+        3:   23-block  0
+call    0 returned 3
+------------------
+        -:   24:};

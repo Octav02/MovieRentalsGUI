@@ -1,0 +1,349 @@
+        -:    0:Source:/home/octav/Qt/6.5.0/gcc_64/include/QtGui/qimage.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/WatchListReadOnlyGUI.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/WatchListReadOnlyGUI.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright (C) 2021 The Qt Company Ltd.
+        -:    2:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    3:
+        -:    4:#ifndef QIMAGE_H
+        -:    5:#define QIMAGE_H
+        -:    6:
+        -:    7:#include <QtGui/qtguiglobal.h>
+        -:    8:#include <QtGui/qcolor.h>
+        -:    9:#include <QtGui/qrgb.h>
+        -:   10:#include <QtGui/qpaintdevice.h>
+        -:   11:#include <QtGui/qpixelformat.h>
+        -:   12:#include <QtGui/qtransform.h>
+        -:   13:#include <QtCore/qbytearray.h>
+        -:   14:#include <QtCore/qbytearrayview.h>
+        -:   15:#include <QtCore/qrect.h>
+        -:   16:#include <QtCore/qstring.h>
+        -:   17:#include <QtCore/qcontainerfwd.h>
+        -:   18:
+        -:   19:#if defined(Q_OS_DARWIN) || defined(Q_QDOC)
+        -:   20:Q_FORWARD_DECLARE_MUTABLE_CG_TYPE(CGImage);
+        -:   21:#endif
+        -:   22:
+        -:   23:QT_BEGIN_NAMESPACE
+        -:   24:
+        -:   25:
+        -:   26:class QColorSpace;
+        -:   27:class QColorTransform;
+        -:   28:class QIODevice;
+        -:   29:class QTransform;
+        -:   30:class QVariant;
+        -:   31:
+        -:   32:struct QImageData;
+        -:   33:
+        -:   34:typedef void (*QImageCleanupFunction)(void*);
+        -:   35:
+        -:   36:class Q_GUI_EXPORT QImage : public QPaintDevice
+        -:   37:{
+        -:   38:    Q_GADGET
+        -:   39:public:
+        -:   40:    enum InvertMode { InvertRgb, InvertRgba };
+        -:   41:    enum Format {
+        -:   42:        Format_Invalid,
+        -:   43:        Format_Mono,
+        -:   44:        Format_MonoLSB,
+        -:   45:        Format_Indexed8,
+        -:   46:        Format_RGB32,
+        -:   47:        Format_ARGB32,
+        -:   48:        Format_ARGB32_Premultiplied,
+        -:   49:        Format_RGB16,
+        -:   50:        Format_ARGB8565_Premultiplied,
+        -:   51:        Format_RGB666,
+        -:   52:        Format_ARGB6666_Premultiplied,
+        -:   53:        Format_RGB555,
+        -:   54:        Format_ARGB8555_Premultiplied,
+        -:   55:        Format_RGB888,
+        -:   56:        Format_RGB444,
+        -:   57:        Format_ARGB4444_Premultiplied,
+        -:   58:        Format_RGBX8888,
+        -:   59:        Format_RGBA8888,
+        -:   60:        Format_RGBA8888_Premultiplied,
+        -:   61:        Format_BGR30,
+        -:   62:        Format_A2BGR30_Premultiplied,
+        -:   63:        Format_RGB30,
+        -:   64:        Format_A2RGB30_Premultiplied,
+        -:   65:        Format_Alpha8,
+        -:   66:        Format_Grayscale8,
+        -:   67:        Format_RGBX64,
+        -:   68:        Format_RGBA64,
+        -:   69:        Format_RGBA64_Premultiplied,
+        -:   70:        Format_Grayscale16,
+        -:   71:        Format_BGR888,
+        -:   72:        Format_RGBX16FPx4,
+        -:   73:        Format_RGBA16FPx4,
+        -:   74:        Format_RGBA16FPx4_Premultiplied,
+        -:   75:        Format_RGBX32FPx4,
+        -:   76:        Format_RGBA32FPx4,
+        -:   77:        Format_RGBA32FPx4_Premultiplied,
+        -:   78:#ifndef Q_QDOC
+        -:   79:        NImageFormats
+        -:   80:#endif
+        -:   81:    };
+        -:   82:    Q_ENUM(Format)
+        -:   83:
+        -:   84:    QImage() noexcept;
+        -:   85:    QImage(const QSize &size, Format format);
+        -:   86:    QImage(int width, int height, Format format);
+        -:   87:    QImage(uchar *data, int width, int height, Format format, QImageCleanupFunction cleanupFunction = nullptr, void *cleanupInfo = nullptr);
+        -:   88:    QImage(const uchar *data, int width, int height, Format format, QImageCleanupFunction cleanupFunction = nullptr, void *cleanupInfo = nullptr);
+        -:   89:    QImage(uchar *data, int width, int height, qsizetype bytesPerLine, Format format, QImageCleanupFunction cleanupFunction = nullptr, void *cleanupInfo = nullptr);
+        -:   90:    QImage(const uchar *data, int width, int height, qsizetype bytesPerLine, Format format, QImageCleanupFunction cleanupFunction = nullptr, void *cleanupInfo = nullptr);
+        -:   91:
+        -:   92:#ifndef QT_NO_IMAGEFORMAT_XPM
+        -:   93:    explicit QImage(const char * const xpm[]);
+        -:   94:#endif
+        -:   95:    explicit QImage(const QString &fileName, const char *format = nullptr);
+        -:   96:
+        -:   97:    QImage(const QImage &);
+        -:   98:    QImage(QImage &&other) noexcept
+        -:   99:        : QPaintDevice(), d(std::exchange(other.d, nullptr))
+        -:  100:    {}
+        -:  101:    ~QImage();
+        -:  102:
+        -:  103:    QImage &operator=(const QImage &);
+        -:  104:    QT_MOVE_ASSIGNMENT_OPERATOR_IMPL_VIA_MOVE_AND_SWAP(QImage)
+        -:  105:    void swap(QImage &other) noexcept
+        -:  106:    { qt_ptr_swap(d, other.d); }
+        -:  107:
+        -:  108:    bool isNull() const;
+        -:  109:
+        -:  110:    int devType() const override;
+        -:  111:
+        -:  112:    bool operator==(const QImage &) const;
+        -:  113:    bool operator!=(const QImage &) const;
+        -:  114:    operator QVariant() const;
+        -:  115:    void detach();
+        -:  116:    bool isDetached() const;
+        -:  117:
+        -:  118:    [[nodiscard]] QImage copy(const QRect &rect = QRect()) const;
+        -:  119:    [[nodiscard]] QImage copy(int x, int y, int w, int h) const
+        -:  120:    { return copy(QRect(x, y, w, h)); }
+        -:  121:
+        -:  122:    Format format() const;
+        -:  123:
+        -:  124:    [[nodiscard]] QImage convertToFormat(Format f, Qt::ImageConversionFlags flags = Qt::AutoColor) const &
+        -:  125:    { return convertToFormat_helper(f, flags); }
+        -:  126:    [[nodiscard]] QImage convertToFormat(Format f, Qt::ImageConversionFlags flags = Qt::AutoColor) &&
+        -:  127:    {
+        -:  128:        if (convertToFormat_inplace(f, flags))
+        -:  129:            return std::move(*this);
+        -:  130:        else
+        -:  131:            return convertToFormat_helper(f, flags);
+        -:  132:    }
+        -:  133:    [[nodiscard]] QImage convertToFormat(Format f, const QList<QRgb> &colorTable,
+        -:  134:                                         Qt::ImageConversionFlags flags = Qt::AutoColor) const;
+        -:  135:
+        -:  136:    bool reinterpretAsFormat(Format f);
+        -:  137:    [[nodiscard]] QImage convertedTo(Format f, Qt::ImageConversionFlags flags = Qt::AutoColor) const &
+        -:  138:    { return convertToFormat(f, flags); }
+        -:  139:    [[nodiscard]] QImage convertedTo(Format f, Qt::ImageConversionFlags flags = Qt::AutoColor) &&
+        -:  140:    { return convertToFormat(f, flags); }
+        -:  141:    void convertTo(Format f, Qt::ImageConversionFlags flags = Qt::AutoColor);
+        -:  142:
+        -:  143:    int width() const;
+        -:  144:    int height() const;
+        -:  145:    QSize size() const;
+        -:  146:    QRect rect() const;
+        -:  147:
+        -:  148:    int depth() const;
+        -:  149:    int colorCount() const;
+        -:  150:    int bitPlaneCount() const;
+        -:  151:
+        -:  152:    QRgb color(int i) const;
+        -:  153:    void setColor(int i, QRgb c);
+        -:  154:    void setColorCount(int);
+        -:  155:
+        -:  156:    bool allGray() const;
+        -:  157:    bool isGrayscale() const;
+        -:  158:
+        -:  159:    uchar *bits();
+        -:  160:    const uchar *bits() const;
+        -:  161:    const uchar *constBits() const;
+        -:  162:
+        -:  163:    qsizetype sizeInBytes() const;
+        -:  164:
+        -:  165:    uchar *scanLine(int);
+        -:  166:    const uchar *scanLine(int) const;
+        -:  167:    const uchar *constScanLine(int) const;
+        -:  168:    qsizetype bytesPerLine() const;
+        -:  169:
+        -:  170:    bool valid(int x, int y) const;
+        -:  171:    bool valid(const QPoint &pt) const;
+        -:  172:
+        -:  173:    int pixelIndex(int x, int y) const;
+        -:  174:    int pixelIndex(const QPoint &pt) const;
+        -:  175:
+        -:  176:    QRgb pixel(int x, int y) const;
+        -:  177:    QRgb pixel(const QPoint &pt) const;
+        -:  178:
+        -:  179:    void setPixel(int x, int y, uint index_or_rgb);
+        -:  180:    void setPixel(const QPoint &pt, uint index_or_rgb);
+        -:  181:
+        -:  182:    QColor pixelColor(int x, int y) const;
+        -:  183:    QColor pixelColor(const QPoint &pt) const;
+        -:  184:
+        -:  185:    void setPixelColor(int x, int y, const QColor &c);
+        -:  186:    void setPixelColor(const QPoint &pt, const QColor &c);
+        -:  187:
+        -:  188:    QList<QRgb> colorTable() const;
+        -:  189:    void setColorTable(const QList<QRgb> &colors);
+        -:  190:
+        -:  191:    qreal devicePixelRatio() const;
+        -:  192:    void setDevicePixelRatio(qreal scaleFactor);
+        -:  193:    QSizeF deviceIndependentSize() const;
+        -:  194:
+        -:  195:    void fill(uint pixel);
+        -:  196:    void fill(const QColor &color);
+        -:  197:    void fill(Qt::GlobalColor color);
+        -:  198:
+        -:  199:
+        -:  200:    bool hasAlphaChannel() const;
+        -:  201:    void setAlphaChannel(const QImage &alphaChannel);
+        -:  202:    [[nodiscard]] QImage createAlphaMask(Qt::ImageConversionFlags flags = Qt::AutoColor) const;
+        -:  203:#ifndef QT_NO_IMAGE_HEURISTIC_MASK
+        -:  204:    [[nodiscard]] QImage createHeuristicMask(bool clipTight = true) const;
+        -:  205:#endif
+        -:  206:    [[nodiscard]] QImage createMaskFromColor(QRgb color, Qt::MaskMode mode = Qt::MaskInColor) const;
+        -:  207:
+function _ZNK6QImage6scaledEiiN2Qt15AspectRatioModeENS0_18TransformationModeE called 0 returned 0% blocks executed 0%
+    #####:  208:    [[nodiscard]] QImage scaled(int w, int h, Qt::AspectRatioMode aspectMode = Qt::IgnoreAspectRatio,
+        -:  209:                                Qt::TransformationMode mode = Qt::FastTransformation) const
+    #####:  210:    { return scaled(QSize(w, h), aspectMode, mode); }
+    %%%%%:  210-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  210-block  1
+    %%%%%:  210-block  2
+        -:  211:    [[nodiscard]] QImage scaled(const QSize &s, Qt::AspectRatioMode aspectMode = Qt::IgnoreAspectRatio,
+        -:  212:                                Qt::TransformationMode mode = Qt::FastTransformation) const;
+        -:  213:    [[nodiscard]] QImage scaledToWidth(int w, Qt::TransformationMode mode = Qt::FastTransformation) const;
+        -:  214:    [[nodiscard]] QImage scaledToHeight(int h, Qt::TransformationMode mode = Qt::FastTransformation) const;
+        -:  215:    [[nodiscard]] QImage transformed(const QTransform &matrix, Qt::TransformationMode mode = Qt::FastTransformation) const;
+        -:  216:    static QTransform trueMatrix(const QTransform &, int w, int h);
+        -:  217:
+        -:  218:    [[nodiscard]] QImage mirrored(bool horizontally = false, bool vertically = true) const &
+        -:  219:    { return mirrored_helper(horizontally, vertically); }
+        -:  220:    [[nodiscard]] QImage mirrored(bool horizontally = false, bool vertically = true) &&
+        -:  221:    { mirrored_inplace(horizontally, vertically); return std::move(*this); }
+        -:  222:    [[nodiscard]] QImage rgbSwapped() const &
+        -:  223:    { return rgbSwapped_helper(); }
+        -:  224:    [[nodiscard]] QImage rgbSwapped() &&
+        -:  225:    { rgbSwapped_inplace(); return std::move(*this); }
+        -:  226:    void mirror(bool horizontally = false, bool vertically = true)
+        -:  227:    { mirrored_inplace(horizontally, vertically); }
+        -:  228:    void rgbSwap()
+        -:  229:    { rgbSwapped_inplace(); }
+        -:  230:    void invertPixels(InvertMode = InvertRgb);
+        -:  231:
+        -:  232:    QColorSpace colorSpace() const;
+        -:  233:    [[nodiscard]] QImage convertedToColorSpace(const QColorSpace &) const;
+        -:  234:    void convertToColorSpace(const QColorSpace &);
+        -:  235:    void setColorSpace(const QColorSpace &);
+        -:  236:
+        -:  237:    QImage colorTransformed(const QColorTransform &transform) const &;
+        -:  238:    QImage colorTransformed(const QColorTransform &transform) &&;
+        -:  239:    void applyColorTransform(const QColorTransform &transform);
+        -:  240:
+        -:  241:    bool load(QIODevice *device, const char *format);
+        -:  242:    bool load(const QString &fileName, const char *format = nullptr);
+        -:  243:    bool loadFromData(QByteArrayView data, const char *format = nullptr);
+        -:  244:    bool loadFromData(const uchar *buf, int len, const char *format = nullptr); // ### Qt 7: qsizetype
+        -:  245:    bool loadFromData(const QByteArray &data, const char *format = nullptr) // ### Qt 7: drop
+        -:  246:    { return loadFromData(QByteArrayView(data), format); }
+        -:  247:
+        -:  248:    bool save(const QString &fileName, const char *format = nullptr, int quality = -1) const;
+        -:  249:    bool save(QIODevice *device, const char *format = nullptr, int quality = -1) const;
+        -:  250:
+        -:  251:    static QImage fromData(QByteArrayView data, const char *format = nullptr);
+        -:  252:    static QImage fromData(const uchar *data, int size, const char *format = nullptr); // ### Qt 7: qsizetype
+        -:  253:    static QImage fromData(const QByteArray &data, const char *format = nullptr)  // ### Qt 7: drop
+        -:  254:    { return fromData(QByteArrayView(data), format); }
+        -:  255:
+        -:  256:    qint64 cacheKey() const;
+        -:  257:
+        -:  258:    QPaintEngine *paintEngine() const override;
+        -:  259:
+        -:  260:    // Auxiliary data
+        -:  261:    int dotsPerMeterX() const;
+        -:  262:    int dotsPerMeterY() const;
+        -:  263:    void setDotsPerMeterX(int);
+        -:  264:    void setDotsPerMeterY(int);
+        -:  265:    QPoint offset() const;
+        -:  266:    void setOffset(const QPoint&);
+        -:  267:
+        -:  268:    QStringList textKeys() const;
+        -:  269:    QString text(const QString &key = QString()) const;
+        -:  270:    void setText(const QString &key, const QString &value);
+        -:  271:
+        -:  272:    QPixelFormat pixelFormat() const noexcept;
+        -:  273:    static QPixelFormat toPixelFormat(QImage::Format format) noexcept;
+        -:  274:    static QImage::Format toImageFormat(QPixelFormat format) noexcept;
+        -:  275:
+        -:  276:    // Platform specific conversion functions
+        -:  277:#if defined(Q_OS_DARWIN) || defined(Q_QDOC)
+        -:  278:    CGImageRef toCGImage() const Q_DECL_CF_RETURNS_RETAINED;
+        -:  279:#endif
+        -:  280:#if defined(Q_OS_WIN) || defined(Q_QDOC)
+        -:  281:    HBITMAP toHBITMAP() const;
+        -:  282:    HICON toHICON(const QImage &mask = {}) const;
+        -:  283:    static QImage fromHBITMAP(HBITMAP hbitmap);
+        -:  284:    static QImage fromHICON(HICON icon);
+        -:  285:#endif
+        -:  286:
+        -:  287:protected:
+        -:  288:    virtual int metric(PaintDeviceMetric metric) const override;
+        -:  289:    QImage mirrored_helper(bool horizontal, bool vertical) const;
+        -:  290:    QImage rgbSwapped_helper() const;
+        -:  291:    void mirrored_inplace(bool horizontal, bool vertical);
+        -:  292:    void rgbSwapped_inplace();
+        -:  293:    QImage convertToFormat_helper(Format format, Qt::ImageConversionFlags flags) const;
+        -:  294:    bool convertToFormat_inplace(Format format, Qt::ImageConversionFlags flags);
+        -:  295:    QImage smoothScaled(int w, int h) const;
+        -:  296:
+        -:  297:    void detachMetadata(bool invalidateCache = false);
+        -:  298:
+        -:  299:private:
+        -:  300:    QImageData *d;
+        -:  301:
+        -:  302:    friend class QRasterPlatformPixmap;
+        -:  303:    friend class QBlittablePlatformPixmap;
+        -:  304:    friend class QPixmapCacheEntry;
+        -:  305:    friend struct QImageData;
+        -:  306:
+        -:  307:public:
+        -:  308:    typedef QImageData * DataPtr;
+        -:  309:    inline DataPtr &data_ptr() { return d; }
+        -:  310:};
+        -:  311:
+        -:  312:Q_DECLARE_SHARED(QImage)
+        -:  313:
+        -:  314:// Inline functions...
+        -:  315:
+        -:  316:inline bool QImage::valid(const QPoint &pt) const { return valid(pt.x(), pt.y()); }
+        -:  317:inline int QImage::pixelIndex(const QPoint &pt) const { return pixelIndex(pt.x(), pt.y());}
+        -:  318:inline QRgb QImage::pixel(const QPoint &pt) const { return pixel(pt.x(), pt.y()); }
+        -:  319:inline void QImage::setPixel(const QPoint &pt, uint index_or_rgb) { setPixel(pt.x(), pt.y(), index_or_rgb); }
+        -:  320:inline QColor QImage::pixelColor(const QPoint &pt) const { return pixelColor(pt.x(), pt.y()); }
+        -:  321:inline void QImage::setPixelColor(const QPoint &pt, const QColor &c) { setPixelColor(pt.x(), pt.y(), c); }
+        -:  322:
+        -:  323:// QImage stream functions
+        -:  324:
+        -:  325:#if !defined(QT_NO_DATASTREAM)
+        -:  326:Q_GUI_EXPORT QDataStream &operator<<(QDataStream &, const QImage &);
+        -:  327:Q_GUI_EXPORT QDataStream &operator>>(QDataStream &, QImage &);
+        -:  328:#endif
+        -:  329:
+        -:  330:#ifndef QT_NO_DEBUG_STREAM
+        -:  331:Q_GUI_EXPORT QDebug operator<<(QDebug, const QImage &);
+        -:  332:#endif
+        -:  333:
+        -:  334:
+        -:  335:QT_END_NAMESPACE
+        -:  336:
+        -:  337:#endif // QIMAGE_H

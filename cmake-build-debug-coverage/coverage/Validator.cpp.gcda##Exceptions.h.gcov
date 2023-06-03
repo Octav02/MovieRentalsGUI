@@ -1,0 +1,32 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/Exceptions.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Validator.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Validator.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <string>
+        -:    3:#include <utility>
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+        -:    7:class ValidationException {
+        -:    8:private:
+        -:    9:    std::string message;
+        -:   10:public:
+function _ZN19ValidationExceptionC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 100% blocks executed 100%
+        4:   11:    ValidationException(std::string message) : message{std::move(message)} {}
+        4:   11-block  0
+call    0 returned 4
+call    1 returned 4
+        -:   12:    string what() const { return message; }
+        -:   13:    friend std::ostream &operator<<(std::ostream &os, const ValidationException &exception);
+        -:   14:};
+        -:   15:
+        -:   16:class RepositoryException {
+        -:   17:private:
+        -:   18:    std::string message;
+        -:   19:public:
+        -:   20:    RepositoryException(std::string message) : message{std::move(message)} {}
+        -:   21:    string what() const { return message; }
+        -:   22:    friend std::ostream &operator<<(std::ostream &os, const RepositoryException &exception);
+        -:   23:
+        -:   24:};

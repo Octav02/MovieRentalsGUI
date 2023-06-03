@@ -1,0 +1,60 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/Service.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/main.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "AbstractRepository.h"
+        -:    3:#include "MovieRepository.h"
+        -:    4:#include "MovieRepositoryFile.h"
+        -:    5:#include "Validator.h"
+        -:    6:#include "Undo.h"
+        -:    7:#include <memory>
+        -:    8:#include <map>
+        -:    9:#include "Observer.h"
+        -:   10:
+        -:   11:using std::map;
+        -:   12:
+        -:   13:class Service : public Observable {
+        -:   14:private:
+        -:   15:    AbstractRepository* repo{};
+        -:   16:    MovieRepository watchlist = MovieRepository();
+        -:   17:    Validator validator;
+        -:   18:    vector<unique_ptr<ActiuneUndo>> undoActions;
+        -:   19:public:
+        -:   20:    Service() = default;
+        -:   21:    ~Service();
+function _ZN7ServiceC2EP18AbstractRepositoryRK9Validator called 3 returned 100% blocks executed 100%
+        3:   22:    Service(AbstractRepository* repo, const Validator& validator) : repo{repo}, validator{validator} {};
+        3:   22-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+        -:   23:    void addMovie(const string &title, const string &genre, int year, const string &mainActor);
+        -:   24:    void removeMovie(const string &title, const string &genre, int year, const string &mainActor);
+        -:   25:    void updateMovie(const string &title, const string &genre, int year, const string &mainActor);
+        -:   26:    const vector<Movie> &getAll() const;
+        -:   27:    int size() const;
+        -:   28:    const Movie &getMovie(int index) const;
+        -:   29:    int find(const string & title) const;
+        -:   30:
+        -:   31:    void doUndo();
+        -:   32:
+        -:   33:    vector<Movie> getMoviesByTitle(const string& title);
+        -:   34:    vector<Movie> getMoviesByYear(int year);
+        -:   35:    vector<Movie> getMoviesByGenre(const string& genre);
+        -:   36:    vector<Movie> sortMoviesByTitle(bool ascending);
+        -:   37:    vector<Movie> sortMoviesByGenre(bool ascending);
+        -:   38:    vector<Movie> sortMoviesByYear(bool ascending);
+        -:   39:    vector<Movie> sortMoviesByMainActor(bool ascending);
+        -:   40:
+        -:   41:    void addToWatchlist(const string& title, const string& genre, int year, const string& mainActor);
+        -:   42:    void deleteFromWatchlist(const string& title);
+        -:   43:    vector<Movie> getWatchlist();
+        -:   44:    void generateWatchlist(int numberOfMovies);
+        -:   45:
+        -:   46:    map<string, vector<Movie>> getMoviesByType(string type);
+        -:   47:
+        -:   48:    void saveWatchlistToFile(const string& filename);
+        -:   49:
+        -:   50:
+        -:   51:};

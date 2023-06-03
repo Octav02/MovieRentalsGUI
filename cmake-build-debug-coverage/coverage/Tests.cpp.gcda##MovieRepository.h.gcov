@@ -1,0 +1,37 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/MovieRepository.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Tests.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Tests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include "Movie.h"
+        -:    4:#include "Exceptions.h"
+        -:    5:#include "AbstractRepository.h"
+        -:    6:#include <vector>
+        -:    7:
+        -:    8:using namespace std;
+        -:    9:
+        -:   10:class MovieRepository : public AbstractRepository{
+        -:   11:public:
+function _ZN15MovieRepositoryC2Ev called 0 returned 0% blocks executed 0%
+    #####:   12:    MovieRepository() = default;
+    %%%%%:   12-block  0
+call    0 never executed
+        -:   13:
+        -:   14:    ~MovieRepository() override;
+        -:   15:
+        -:   16:    void add(const Movie &movie) override;
+        -:   17:
+        -:   18:    void remove(const Movie &movie) override;
+        -:   19:
+        -:   20:    void update(const Movie &movie) override;
+        -:   21:
+        -:   22:    const vector<Movie> &getAll() const override;
+        -:   23:
+        -:   24:    int size() const override;
+        -:   25:
+        -:   26:    const Movie &getMovie(int index) const override;
+        -:   27:
+        -:   28:    int find(const Movie &movie) const override;
+        -:   29:
+        -:   30:};

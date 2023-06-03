@@ -1,0 +1,23 @@
+# ninja log v5
+0	12	1685821712478159763	Lab10_autogen/timestamp	afb47b97202ddf94
+0	12	1685821712478159763	Lab10_autogen/mocs_compilation.cpp	afb47b97202ddf94
+0	12	1685821712478159763	/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/Lab10_autogen/timestamp	afb47b97202ddf94
+0	12	1685821712478159763	/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/Lab10_autogen/mocs_compilation.cpp	afb47b97202ddf94
+12	37	1685821712502159640	CMakeFiles/Lab10.dir/Lab10_autogen/mocs_compilation.cpp.o	74c80438b7d39f34
+13	290	1685821712754158345	CMakeFiles/Lab10.dir/Exceptions.cpp.o	8d2884bc9e64179e
+13	343	1685821712810158056	CMakeFiles/Lab10.dir/AbstractRepository.cpp.o	3148774664397858
+13	497	1685821712962157275	CMakeFiles/Lab10.dir/MovieRepository.cpp.o	210f126c5fb21117
+13	516	1685821712982157173	CMakeFiles/Lab10.dir/Movie.cpp.o	3fb860c6e7707f3c
+343	773	1685821713234155873	CMakeFiles/Lab10.dir/Undo.cpp.o	4ab61e26ad3dcba2
+291	782	1685821713238155852	CMakeFiles/Lab10.dir/Validator.cpp.o	50329b5550548354
+37	805	1685821713266155708	CMakeFiles/Lab10.dir/Tests.cpp.o	94ed4d329e4c36cd
+499	1035	1685821713502154491	CMakeFiles/Lab10.dir/MovieRepositoryFile.cpp.o	dbc7ef4c3e863a9d
+516	2044	1685821714506149303	CMakeFiles/Lab10.dir/Service.cpp.o	dfd429954bd51c60
+2045	2136	1685821714598148827	CMakeFiles/Lab10.dir/Observer.cpp.o	4ad4dc460d3d8a94
+12	3004	1685821715466144327	CMakeFiles/Lab10.dir/main.cpp.o	927f1e981f3c4747
+1037	3400	1685821715866142251	CMakeFiles/Lab10.dir/WatchListReadOnlyGUI.cpp.o	26e3745203cbbc81
+782	3452	1685821715918141981	CMakeFiles/Lab10.dir/JustListGUI.cpp.o	a0312c278493b303
+773	3552	1685821716014141481	CMakeFiles/Lab10.dir/GUI.cpp.o	57c56fad5522a16c
+806	3607	1685821716070141188	CMakeFiles/Lab10.dir/WatchlistCRUDGUI.cpp.o	ae4edd232ebd7324
+2137	3696	1685821716162140709	CMakeFiles/Lab10.dir/TableModel.cpp.o	ed527902bb7c2578
+3697	3993	1685821716454139187	Lab10	3b8b57c276a4e7e8

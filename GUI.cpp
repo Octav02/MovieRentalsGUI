@@ -9,11 +9,8 @@ void GUI::initGUI() {
     table->setHorizontalHeaderItem(1, new QTableWidgetItem("Genre"));
     table->setHorizontalHeaderItem(2, new QTableWidgetItem("Year"));
     table->setHorizontalHeaderItem(3, new QTableWidgetItem("Main Actor"));
+    tableView->setModel(model);
 
-//    table->setColumnWidth(0, 100);
-//    table->setColumnWidth(1, 100);
-//    table->setColumnWidth(2, 100);
-//    table->setColumnWidth(3, 100);
     table->setSelectionBehavior(QAbstractItemView::SelectRows);
 
     auto verticalLayer0 = new QVBoxLayout();
@@ -24,7 +21,7 @@ void GUI::initGUI() {
 
     mainLayout->addLayout(formLayout);
     verticalLayer2->addLayout(formLayout);
-    verticalLayer0->addWidget(table);
+    verticalLayer0->addWidget(tableView);
     auto horizontalLayer2 = new QHBoxLayout();
     horizontalLayer2->addWidget(btnSortByTitle);
     horizontalLayer2->addWidget(btnSortByGenre);
@@ -57,24 +54,8 @@ void GUI::initGUI() {
 }
 
 void GUI::loadData(const vector<Movie> &movies) {
-    table->clear();
-    table->setRowCount(0);
-
-    table->setHorizontalHeaderItem(0, new QTableWidgetItem("Title"));
-    table->setHorizontalHeaderItem(1, new QTableWidgetItem("Genre"));
-    table->setHorizontalHeaderItem(2, new QTableWidgetItem("Year"));
-    table->setHorizontalHeaderItem(3, new QTableWidgetItem("Main Actor"));
-
-    for (const auto &movie: movies) {
-        int row = table->rowCount();
-        table->insertRow(row);
-        //Set color to red
-        table->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(movie.getTitle())));
-        table->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(movie.getGenre())));
-        table->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(to_string(movie.getYear()))));
-        table->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(movie.getMainActor())));
-
-    }
+    model->updateInternalData(movies);
+    model->update();
 }
 
 void GUI::addMovie() {
@@ -163,6 +144,27 @@ void GUI::initConnect() {
         wdg->show();
         loadData(service.sortMoviesByYear(true));
     });
+    QObject::connect(tableView->selectionModel(),&QItemSelectionModel::selectionChanged,[&]() {
+        qDebug() << "Selection changed";
+        auto selected = tableView->selectionModel()->selectedIndexes();
+        if (selected.isEmpty()) {
+            titleText->setText("");
+            genreText->setText("");
+            yearText->setText("");
+            mainActorText->setText("");
+            return;
+        }
+        auto index = selected.at(0);
+        auto title = index.sibling(index.row(), 0).data().toString();
+        auto genre = index.sibling(index.row(), 1).data().toString();
+        auto year = index.sibling(index.row(), 2).data().toString();
+        auto mainActor = index.sibling(index.row(), 3).data().toString();
+        titleText->setText(title);
+        genreText->setText(genre);
+        yearText->setText(year);
+        mainActorText->setText(mainActor);
+
+    });
     QObject::connect(btnSortByMainActor, &QPushButton::clicked, [&]() {
         qDebug() << "Sort by main actor apasat";
         auto wdg = new JustListGUI(service.sortMoviesByMainActor(true));
@@ -194,7 +196,6 @@ void GUI::initConnect() {
             mainActorText->setText("");
             return;
         }
-        //TODO -> setSelectionMode
         auto selectedTitle = selectedRow.at(0);
         auto selectedGenre = selectedRow.at(1);
         auto selectedYear = selectedRow.at(2);

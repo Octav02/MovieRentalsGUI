@@ -1,0 +1,70 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/Movie.h
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Service.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include <string>
+        -:    4:#include <iostream>
+        -:    5:
+        -:    6:using namespace std;
+        -:    7:
+        -:    8:class Movie {
+        -:    9:private :
+        -:   10:    string title;
+        -:   11:    string genre;
+        -:   12:    int year;
+        -:   13:    string mainActor;
+        -:   14:
+        -:   15:public:
+function _ZN5MovieC2Ev called 0 returned 0% blocks executed 0%
+    #####:   16:    Movie() = default;
+    %%%%%:   16-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   17:
+        -:   18:    Movie(const string &title, const string &genre, int year, const string &mainActor);
+        -:   19:
+        -:   20:    Movie(const Movie &movie);
+        -:   21:
+        -:   22:    Movie &operator=(const Movie &movie);
+        -:   23:
+        -:   24:    //Rule of 5
+function _ZN5MovieD2Ev called 0 returned 0% blocks executed 0%
+    #####:   25:    ~Movie() = default;
+    %%%%%:   25-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   26:
+        -:   27:    Movie(Movie &&movie) noexcept;
+        -:   28:
+        -:   29:    Movie &operator=(Movie &&movie) noexcept;
+        -:   30:
+        -:   31:    string getTitle() const;
+        -:   32:
+        -:   33:    void setTitle(const string &movieTitle);
+        -:   34:
+        -:   35:    string getGenre() const;
+        -:   36:
+        -:   37:    void setGenre(const string &gen);
+        -:   38:
+        -:   39:    int getYear() const;
+        -:   40:
+        -:   41:    void setYear(int movieYear);
+        -:   42:
+        -:   43:    string getMainActor() const;
+        -:   44:
+        -:   45:    void setMainActor(const string &actor);
+        -:   46:
+        -:   47:    bool operator==(const Movie &rhs) const;
+        -:   48:
+        -:   49:    bool operator!=(const Movie &rhs) const;
+        -:   50:
+        -:   51:    string toString();
+        -:   52:
+        -:   53:    friend ostream &operator<<(ostream &os, const Movie &movie);
+        -:   54:
+        -:   55:    friend istream &operator>>(istream &is, Movie &movie);
+        -:   56:};

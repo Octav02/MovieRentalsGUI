@@ -1,0 +1,98 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/WatchListReadOnlyGUI.cpp
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/WatchListReadOnlyGUI.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/WatchListReadOnlyGUI.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by octav on 19.05.2023.
+        -:    3://
+        -:    4:
+        -:    5:#include "WatchListReadOnlyGUI.h"
+        -:    6:
+function _ZN20WatchListReadOnlyGUI7initGUIEv called 0 returned 0% blocks executed 0%
+    #####:    7:void WatchListReadOnlyGUI::initGUI() {
+    #####:    8:    auto mainLayout = new QHBoxLayout();
+    %%%%%:    8-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:    8-block  1
+call    4 never executed
+    #####:    9:    setLayout(mainLayout);
+    %%%%%:    9-block  0
+call    0 never executed
+    #####:   10:    setBaseSize(500, 500);
+call    0 never executed
+    #####:   11:}
+        -:   12:
+function _ZN20WatchListReadOnlyGUI8loadDataEv called 0 returned 0% blocks executed 0%
+    #####:   13:void WatchListReadOnlyGUI::loadData() {
+    #####:   14:}
+        -:   15:
+function _ZN20WatchListReadOnlyGUI10paintEventEP11QPaintEvent called 0 returned 0% blocks executed 0%
+    #####:   16:void WatchListReadOnlyGUI::paintEvent(QPaintEvent *event) {
+    #####:   17:    QPainter painter(this);
+    %%%%%:   17-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   18:    vector<Movie> movies = service.getWatchlist();
+    %%%%%:   18-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   19:    int x = 0, y = 0;
+    #####:   20:    for (const auto &movie: movies) {
+    %%%%%:   20-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:   20-block  1
+call    2 never executed
+call    3 never executed
+    %%%%%:   20-block  2
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+        -:   21:
+    #####:   22:        painter.drawRect(x, y, 20,30);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   23:        QImage image("../img1.jpg");
+    %%%%%:   23-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   23-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   23-block  2
+    #####:   24:        image.scaled(200,200,Qt::KeepAspectRatio);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   24-block  0
+call    3 never executed
+    #####:   25:        painter.drawImage(x,y,image);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   25-block  0
+    #####:   26:        x += 150;
+    #####:   27:        y += 150;
+    #####:   28:    }
+    %%%%%:   28-block  0
+call    0 never executed
+    $$$$$:   28-block  1
+call    1 never executed
+        -:   29:
+    #####:   30:}
+    %%%%%:   30-block  0
+call    0 never executed
+call    1 never executed
+    $$$$$:   30-block  1
+call    2 never executed
+    $$$$$:   30-block  2
+call    3 never executed

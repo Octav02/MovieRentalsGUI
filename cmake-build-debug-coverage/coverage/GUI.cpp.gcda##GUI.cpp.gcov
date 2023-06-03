@@ -1,0 +1,2303 @@
+        -:    0:Source:/home/octav/CLionProjects/Lab10/GUI.cpp
+        -:    0:Graph:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/GUI.cpp.gcno
+        -:    0:Data:/home/octav/CLionProjects/Lab10/cmake-build-debug-coverage/CMakeFiles/Lab10.dir/GUI.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "GUI.h"
+        -:    2:
+function _ZN3GUI7initGUIEv called 1 returned 100% blocks executed 59%
+        1:    3:void GUI::initGUI() {
+        1:    4:    auto mainLayout = new QHBoxLayout();
+        1:    4-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:    4-block  1
+call    4 never executed
+        1:    5:    setLayout(mainLayout);
+        1:    5-block  0
+call    0 returned 1
+        -:    6:
+        -:    7:    //Set names for columns
+        1:    8:    table->setHorizontalHeaderItem(0, new QTableWidgetItem("Title"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:    8-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:    8-block  1
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:    8-block  2
+call   10 returned 1
+    $$$$$:    8-block  3
+call   11 never executed
+    $$$$$:    8-block  4
+call   12 never executed
+    $$$$$:    8-block  5
+call   13 never executed
+        1:    9:    table->setHorizontalHeaderItem(1, new QTableWidgetItem("Genre"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:    9-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:    9-block  1
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:    9-block  2
+call   10 returned 1
+    $$$$$:    9-block  3
+call   11 never executed
+    $$$$$:    9-block  4
+call   12 never executed
+    $$$$$:    9-block  5
+call   13 never executed
+        1:   10:    table->setHorizontalHeaderItem(2, new QTableWidgetItem("Year"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   10-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   10-block  1
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:   10-block  2
+call   10 returned 1
+    $$$$$:   10-block  3
+call   11 never executed
+    $$$$$:   10-block  4
+call   12 never executed
+    $$$$$:   10-block  5
+call   13 never executed
+        1:   11:    table->setHorizontalHeaderItem(3, new QTableWidgetItem("Main Actor"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   11-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   11-block  1
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:   11-block  2
+call   10 returned 1
+    $$$$$:   11-block  3
+call   11 never executed
+    $$$$$:   11-block  4
+call   12 never executed
+    $$$$$:   11-block  5
+call   13 never executed
+        1:   12:    tableView->setModel(model);
+call    0 returned 1
+        -:   13:
+        1:   14:    table->setSelectionBehavior(QAbstractItemView::SelectRows);
+call    0 returned 1
+        -:   15:
+        1:   16:    auto verticalLayer0 = new QVBoxLayout();
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   16-block  0
+call    4 never executed
+        1:   17:    auto verticalLayer2 = new QVBoxLayout();
+        1:   17-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   17-block  1
+call    4 never executed
+        1:   18:    auto verticalLayer1 = new QVBoxLayout();
+        1:   18-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   18-block  1
+call    4 never executed
+        1:   19:    auto formLayout = new QFormLayout();
+        1:   19-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   19-block  1
+call    4 never executed
+        1:   20:    mainLayout->addLayout(verticalLayer0);
+        1:   20-block  0
+call    0 returned 1
+        -:   21:
+        1:   22:    mainLayout->addLayout(formLayout);
+call    0 returned 1
+        1:   23:    verticalLayer2->addLayout(formLayout);
+call    0 returned 1
+        1:   24:    verticalLayer0->addWidget(tableView);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   24-block  0
+call    4 never executed
+        1:   25:    auto horizontalLayer2 = new QHBoxLayout();
+        1:   25-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   25-block  1
+call    4 never executed
+        1:   26:    horizontalLayer2->addWidget(btnSortByTitle);
+        1:   26-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   26-block  1
+call    4 never executed
+        1:   27:    horizontalLayer2->addWidget(btnSortByGenre);
+        1:   27-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   27-block  1
+call    4 never executed
+        1:   28:    horizontalLayer2->addWidget(btnSortByYear);
+        1:   28-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   28-block  1
+call    4 never executed
+        1:   29:    horizontalLayer2->addWidget(btnSortByMainActor);
+        1:   29-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   29-block  1
+call    4 never executed
+        1:   30:    horizontalLayer2->addWidget(btnFilterByTitle);
+        1:   30-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   30-block  1
+call    4 never executed
+        1:   31:    horizontalLayer2->addWidget(btnFilterByYear);
+        1:   31-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   31-block  1
+call    4 never executed
+        1:   32:    horizontalLayer2->addWidget(btnFilterByGenre);
+        1:   32-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   32-block  1
+call    4 never executed
+        -:   33:
+        1:   34:    verticalLayer0->addLayout(horizontalLayer2);
+        1:   34-block  0
+call    0 returned 1
+        -:   35:
+        1:   36:    formLayout->addRow("Title", titleText);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   36-block  0
+call    4 returned 1
+    $$$$$:   36-block  1
+call    5 never executed
+    $$$$$:   36-block  2
+call    6 never executed
+        1:   37:    formLayout->addRow("Genre", genreText);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   37-block  0
+call    4 returned 1
+    $$$$$:   37-block  1
+call    5 never executed
+    $$$$$:   37-block  2
+call    6 never executed
+        1:   38:    formLayout->addRow("Year", yearText);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   38-block  0
+call    4 returned 1
+    $$$$$:   38-block  1
+call    5 never executed
+    $$$$$:   38-block  2
+call    6 never executed
+        1:   39:    formLayout->addRow("Main Actor", mainActorText);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   39-block  0
+call    4 returned 1
+    $$$$$:   39-block  1
+call    5 never executed
+    $$$$$:   39-block  2
+call    6 never executed
+        -:   40:
+        1:   41:    auto horizontalLayer1 = new QHBoxLayout();
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   41-block  0
+call    4 never executed
+        1:   42:    horizontalLayer1->addWidget(btnAdd);
+        1:   42-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   42-block  1
+call    4 never executed
+        1:   43:    horizontalLayer1->addWidget(btnExit);
+        1:   43-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   43-block  1
+call    4 never executed
+        1:   44:    horizontalLayer1->addWidget(btnUpdate);
+        1:   44-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   44-block  1
+call    4 never executed
+        1:   45:    horizontalLayer1->addWidget(btnDelete);
+        1:   45-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   45-block  1
+call    4 never executed
+        1:   46:    verticalLayer1->addLayout(horizontalLayer1);
+        1:   46-block  0
+call    0 returned 1
+        1:   47:    verticalLayer1->addWidget(btnUndo);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   47-block  0
+call    4 never executed
+        1:   48:    verticalLayer0->addWidget(btnWatchList);
+        1:   48-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   48-block  1
+call    4 never executed
+        1:   49:    verticalLayer0->addWidget(btnReadOnly);
+        1:   49-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   50:    mainLayout->addLayout(verticalLayer1);
+        1:   50-block  0
+call    0 returned 1
+        1:   51:    mainLayout->addLayout(buttonLayout);
+call    0 returned 1
+        -:   52:
+        -:   53:
+        1:   54:}
+        -:   55:
+function _ZN3GUI8loadDataERKSt6vectorI5MovieSaIS1_EE called 1 returned 100% blocks executed 100%
+        1:   56:void GUI::loadData(const vector<Movie> &movies) {
+        1:   57:    model->updateInternalData(movies);
+        1:   57-block  0
+call    0 returned 1
+        1:   58:    model->update();
+call    0 returned 1
+        1:   59:}
+        -:   60:
+function _ZN3GUI8addMovieEv called 0 returned 0% blocks executed 0%
+    #####:   61:void GUI::addMovie() {
+        -:   62:
+    #####:   63:    qDebug() << "Add apasat";
+    %%%%%:   63-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   63-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   63-block  2
+call    7 never executed
+    $$$$$:   63-block  3
+call    8 never executed
+    $$$$$:   63-block  4
+    $$$$$:   63-block  5
+call    9 never executed
+        -:   64:    try {
+    #####:   65:        string title = titleText->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   65-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   65-block  1
+    #####:   66:        string genre = genreText->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   66-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   66-block  1
+    #####:   67:        int year = stoi(yearText->text().toStdString());
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   67-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   67-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   67-block  2
+call    9 never executed
+call   10 never executed
+    $$$$$:   67-block  3
+call   11 never executed
+    $$$$$:   67-block  4
+    $$$$$:   67-block  5
+call   12 never executed
+    $$$$$:   67-block  6
+    #####:   68:        string mainActor = mainActorText->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   68-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   68-block  1
+    #####:   69:        service.addMovie(title, genre, year, mainActor);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   70:        loadData(service.getAll());
+    %%%%%:   70-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   70-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   71:    } catch (const RepositoryException &exception) {
+    %%%%%:   71-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   71-block  1
+call    3 never executed
+    $$$$$:   71-block  2
+call    4 never executed
+    $$$$$:   71-block  3
+call    5 never executed
+    $$$$$:   71-block  4
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   71-block  5
+call   10 never executed
+    =====:   72:        QMessageBox::information(nullptr, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   72-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:   72-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   72-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    $$$$$:   72-block  3
+call   13 never executed
+call   14 never executed
+call   15 never executed
+    $$$$$:   72-block  4
+call   16 never executed
+    $$$$$:   72-block  5
+    $$$$$:   72-block  6
+call   17 never executed
+    $$$$$:   72-block  7
+    $$$$$:   72-block  8
+call   18 never executed
+    $$$$$:   72-block  9
+    $$$$$:   72-block 10
+    =====:   73:    } catch (const ValidationException &exception) {
+call    0 never executed
+    $$$$$:   73-block  0
+call    1 never executed
+    $$$$$:   73-block  1
+call    2 never executed
+    =====:   74:        QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   74-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:   74-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:   74-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    $$$$$:   74-block  3
+call   13 never executed
+call   14 never executed
+call   15 never executed
+    $$$$$:   74-block  4
+call   16 never executed
+    $$$$$:   74-block  5
+    $$$$$:   74-block  6
+call   17 never executed
+    $$$$$:   74-block  7
+    $$$$$:   74-block  8
+call   18 never executed
+    $$$$$:   74-block  9
+    $$$$$:   74-block 10
+    =====:   75:    } catch (const exception &exception) {
+call    0 never executed
+    $$$$$:   75-block  0
+call    1 never executed
+    $$$$$:   75-block  1
+call    2 never executed
+    =====:   76:        QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   76-block  0
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:   76-block  1
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    $$$$$:   76-block  2
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    $$$$$:   76-block  3
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+    $$$$$:   76-block  4
+call   19 never executed
+    $$$$$:   76-block  5
+    $$$$$:   76-block  6
+call   20 never executed
+    $$$$$:   76-block  7
+    $$$$$:   76-block  8
+call   21 never executed
+    $$$$$:   76-block  9
+    $$$$$:   76-block 10
+call   22 never executed
+    $$$$$:   76-block 11
+    $$$$$:   76-block 12
+    =====:   77:    }
+call    0 never executed
+    $$$$$:   77-block  0
+call    1 never executed
+    #####:   78:}
+    %%%%%:   78-block  0
+        -:   79:
+function _ZN3GUI11initConnectEv called 1 returned 100% blocks executed 100%
+        1:   80:void GUI::initConnect() {
+function _ZZN3GUI11initConnectEvENKUlvE_clEv called 0 returned 0% blocks executed 0%
+       1*:   81:    QObject::connect(btnExit, &QPushButton::clicked, [&]() {
+        1:   81-block  0
+call    0 returned 1
+call    1 returned 1
+    #####:   82:        qDebug() << "Exit apasat";
+    %%%%%:   82-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   82-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   82-block  2
+call    7 never executed
+    $$$$$:   82-block  3
+call    8 never executed
+    $$$$$:   82-block  4
+    #####:   83:        close();
+call    0 never executed
+    #####:   84:    });
+function _ZZN3GUI11initConnectEvENKUlvE0_clEv called 0 returned 0% blocks executed 0%
+       1*:   85:    QObject::connect(btnReadOnly, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:   86:        qDebug() << "ReadOnly apasat";
+    %%%%%:   86-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   86-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   86-block  2
+call    7 never executed
+    $$$$$:   86-block  3
+call    8 never executed
+    $$$$$:   86-block  4
+    $$$$$:   86-block  5
+call    9 never executed
+    #####:   87:        auto wdg = new WatchListReadOnlyGUI(service);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   87-block  0
+call    4 never executed
+    #####:   88:        wdg->show();
+    %%%%%:   88-block  0
+call    0 never executed
+    #####:   89:    });
+function _ZZN3GUI11initConnectEvENKUlvE1_clEv called 0 returned 0% blocks executed 0%
+       1*:   90:    QObject::connect(btnAdd, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:   91:        qDebug() << "Add apasat";
+    %%%%%:   91-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   91-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   91-block  2
+call    7 never executed
+    $$$$$:   91-block  3
+call    8 never executed
+    $$$$$:   91-block  4
+    #####:   92:        addMovie();
+call    0 never executed
+    #####:   93:        addButtons();
+call    0 never executed
+    #####:   94:    });
+function _ZZN3GUI11initConnectEvENKUlvE2_clEv called 0 returned 0% blocks executed 0%
+       1*:   95:    QObject::connect(btnUpdate, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:   96:        qDebug() << "Update apasat";
+    %%%%%:   96-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   96-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   96-block  2
+call    7 never executed
+    $$$$$:   96-block  3
+call    8 never executed
+    $$$$$:   96-block  4
+    #####:   97:        updateMovie();
+call    0 never executed
+    #####:   98:        addButtons();
+call    0 never executed
+    #####:   99:    });
+function _ZZN3GUI11initConnectEvENKUlvE3_clEv called 0 returned 0% blocks executed 0%
+       1*:  100:    QObject::connect(btnDelete, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  101:        qDebug() << "Delete apasat";
+    %%%%%:  101-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  101-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  101-block  2
+call    7 never executed
+    $$$$$:  101-block  3
+call    8 never executed
+    $$$$$:  101-block  4
+    #####:  102:        deleteMovie();
+call    0 never executed
+    #####:  103:        addButtons();
+call    0 never executed
+    #####:  104:    });
+function _ZZN3GUI11initConnectEvENKUlvE4_clEv called 0 returned 0% blocks executed 0%
+       1*:  105:    QObject::connect(btnFilterByTitle, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  106:        qDebug() << "Filter by title apasat";
+    %%%%%:  106-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  106-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  106-block  2
+call    7 never executed
+    $$$$$:  106-block  3
+call    8 never executed
+    $$$$$:  106-block  4
+    $$$$$:  106-block  5
+    #####:  107:        string title = titleText->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  107-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  107-block  1
+    #####:  108:        auto wdg = new JustListGUI(service.getMoviesByTitle(title));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  108-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  108-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  108-block  2
+call    9 never executed
+    $$$$$:  108-block  3
+call   10 never executed
+    $$$$$:  108-block  4
+call   11 never executed
+    $$$$$:  108-block  5
+    #####:  109:        wdg->show();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  110:    });
+    %%%%%:  110-block  0
+call    0 never executed
+    $$$$$:  110-block  1
+call    1 never executed
+function _ZZN3GUI11initConnectEvENKUlvE5_clEv called 0 returned 0% blocks executed 0%
+       1*:  111:    QObject::connect(btnFilterByYear, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  112:        qDebug() << "Filter by year apasat";
+    %%%%%:  112-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  112-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  112-block  2
+call    7 never executed
+    $$$$$:  112-block  3
+call    8 never executed
+    $$$$$:  112-block  4
+    $$$$$:  112-block  5
+call    9 never executed
+        -:  113:        try {
+    #####:  114:            int year = stoi(yearText->text().toStdString());
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  114-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  114-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  114-block  2
+call    9 never executed
+call   10 never executed
+    $$$$$:  114-block  3
+call   11 never executed
+    $$$$$:  114-block  4
+    $$$$$:  114-block  5
+call   12 never executed
+    $$$$$:  114-block  6
+    #####:  115:            auto wdg = new JustListGUI(service.getMoviesByYear(year));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  115-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  115-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  115-block  2
+call    9 never executed
+    $$$$$:  115-block  3
+call   10 never executed
+    $$$$$:  115-block  4
+call   11 never executed
+    $$$$$:  115-block  5
+    #####:  116:            wdg->show();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  117:        } catch (const exception &exception) {
+    $$$$$:  117-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  117-block  1
+call    2 never executed
+    =====:  118:            QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  118-block  0
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:  118-block  1
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  118-block  2
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  118-block  3
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+    $$$$$:  118-block  4
+call   19 never executed
+    $$$$$:  118-block  5
+    $$$$$:  118-block  6
+call   20 never executed
+    $$$$$:  118-block  7
+    $$$$$:  118-block  8
+call   21 never executed
+    $$$$$:  118-block  9
+    $$$$$:  118-block 10
+call   22 never executed
+    $$$$$:  118-block 11
+    $$$$$:  118-block 12
+    =====:  119:        }
+call    0 never executed
+    $$$$$:  119-block  0
+call    1 never executed
+        -:  120:
+    #####:  121:    });
+    %%%%%:  121-block  0
+function _ZZN3GUI11initConnectEvENKUlvE6_clEv called 0 returned 0% blocks executed 0%
+       1*:  122:    QObject::connect(btnSortByTitle, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  123:        qDebug() << "Sort by title apasat";
+    %%%%%:  123-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  123-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  123-block  2
+call    7 never executed
+    $$$$$:  123-block  3
+call    8 never executed
+    $$$$$:  123-block  4
+    $$$$$:  123-block  5
+call    9 never executed
+    #####:  124:        auto wdg = new JustListGUI(service.sortMoviesByTitle(true));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  124-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  124-block  1
+call    7 never executed
+    $$$$$:  124-block  2
+call    8 never executed
+    $$$$$:  124-block  3
+call    9 never executed
+    #####:  125:        wdg->show();
+call    0 never executed
+        -:  126://        loadData(service.sortMoviesByTitle(true));
+        -:  127:
+    #####:  128:    });
+function _ZZN3GUI11initConnectEvENKUlvE7_clEv called 0 returned 0% blocks executed 0%
+       1*:  129:    QObject::connect(btnFilterByGenre, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  130:        qDebug() << "Filter by genre apasat";
+    %%%%%:  130-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  130-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  130-block  2
+call    7 never executed
+    $$$$$:  130-block  3
+call    8 never executed
+    $$$$$:  130-block  4
+    $$$$$:  130-block  5
+    #####:  131:        string genre = genreText->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  131-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  131-block  1
+    #####:  132:        auto wdg = new JustListGUI(service.getMoviesByGenre(genre));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  132-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  132-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  132-block  2
+call    9 never executed
+    $$$$$:  132-block  3
+call   10 never executed
+    $$$$$:  132-block  4
+call   11 never executed
+    $$$$$:  132-block  5
+    #####:  133:        wdg->show();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  134:    });
+    %%%%%:  134-block  0
+call    0 never executed
+    $$$$$:  134-block  1
+call    1 never executed
+function _ZZN3GUI11initConnectEvENKUlvE8_clEv called 0 returned 0% blocks executed 0%
+       1*:  135:    QObject::connect(btnSortByGenre, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  136:        qDebug() << "Sort by genre apasat";
+    %%%%%:  136-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  136-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  136-block  2
+call    7 never executed
+    $$$$$:  136-block  3
+call    8 never executed
+    $$$$$:  136-block  4
+    $$$$$:  136-block  5
+call    9 never executed
+    #####:  137:        auto wdg = new JustListGUI(service.sortMoviesByGenre(true));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  137-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  137-block  1
+call    7 never executed
+    $$$$$:  137-block  2
+call    8 never executed
+    $$$$$:  137-block  3
+call    9 never executed
+    #####:  138:        wdg->show();
+call    0 never executed
+        -:  139://        loadData(service.sortMoviesByGenre(true));
+    #####:  140:    });
+function _ZZN3GUI11initConnectEvENKUlvE9_clEv called 0 returned 0% blocks executed 0%
+       1*:  141:    QObject::connect(btnSortByYear, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  142:        qDebug() << "Sort by year apasat";
+    %%%%%:  142-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  142-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  142-block  2
+call    7 never executed
+    $$$$$:  142-block  3
+call    8 never executed
+    $$$$$:  142-block  4
+    $$$$$:  142-block  5
+call    9 never executed
+    #####:  143:        auto wdg = new JustListGUI(service.sortMoviesByYear(true));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  143-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  143-block  1
+call    7 never executed
+    $$$$$:  143-block  2
+call    8 never executed
+    $$$$$:  143-block  3
+call    9 never executed
+    $$$$$:  143-block  4
+call   10 never executed
+    #####:  144:        wdg->show();
+call    0 never executed
+    #####:  145:        loadData(service.sortMoviesByYear(true));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  145-block  0
+call    4 never executed
+    $$$$$:  145-block  1
+call    5 never executed
+    #####:  146:    });
+function _ZZN3GUI11initConnectEvENKUlvE10_clEv called 0 returned 0% blocks executed 0%
+       1*:  147:    QObject::connect(tableView->selectionModel(),&QItemSelectionModel::selectionChanged,[&]() {
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    #####:  148:        qDebug() << "Selection changed";
+    %%%%%:  148-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  148-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  148-block  2
+call    7 never executed
+    $$$$$:  148-block  3
+call    8 never executed
+    $$$$$:  148-block  4
+    $$$$$:  148-block  5
+    #####:  149:        auto selected = tableView->selectionModel()->selectedIndexes();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  149-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  150:        if (selected.isEmpty()) {
+    %%%%%:  150-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  151:            titleText->setText("");
+    %%%%%:  151-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  151-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  151-block  2
+call    6 never executed
+    $$$$$:  151-block  3
+call    7 never executed
+    $$$$$:  151-block  4
+    #####:  152:            genreText->setText("");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  152-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  152-block  1
+call    6 never executed
+    $$$$$:  152-block  2
+call    7 never executed
+    $$$$$:  152-block  3
+    #####:  153:            yearText->setText("");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  153-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  153-block  1
+call    6 never executed
+    $$$$$:  153-block  2
+call    7 never executed
+    $$$$$:  153-block  3
+    #####:  154:            mainActorText->setText("");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  154-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  154-block  1
+call    6 never executed
+    $$$$$:  154-block  2
+call    7 never executed
+    $$$$$:  154-block  3
+    #####:  155:            return;
+        -:  156:        }
+    #####:  157:        auto index = selected.at(0);
+    %%%%%:  157-block  0
+call    0 never executed
+    #####:  158:        auto title = index.sibling(index.row(), 0).data().toString();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  158-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  158-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  158-block  2
+    $$$$$:  158-block  3
+    #####:  159:        auto genre = index.sibling(index.row(), 1).data().toString();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  159-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  159-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  159-block  2
+    $$$$$:  159-block  3
+    #####:  160:        auto year = index.sibling(index.row(), 2).data().toString();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  160-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  160-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  160-block  2
+    $$$$$:  160-block  3
+    #####:  161:        auto mainActor = index.sibling(index.row(), 3).data().toString();
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  161-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  161-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  161-block  2
+    $$$$$:  161-block  3
+    #####:  162:        titleText->setText(title);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  163:        genreText->setText(genre);
+    %%%%%:  163-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  164:        yearText->setText(year);
+    %%%%%:  164-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  165:        mainActorText->setText(mainActor);
+    %%%%%:  165-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  166:
+    #####:  167:    });
+    %%%%%:  167-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    %%%%%:  167-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:  167-block  2
+call    7 never executed
+    $$$$$:  167-block  3
+call    8 never executed
+    $$$$$:  167-block  4
+call    9 never executed
+    $$$$$:  167-block  5
+call   10 never executed
+    $$$$$:  167-block  6
+call   11 never executed
+function _ZZN3GUI11initConnectEvENKUlvE11_clEv called 0 returned 0% blocks executed 0%
+       1*:  168:    QObject::connect(btnSortByMainActor, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  169:        qDebug() << "Sort by main actor apasat";
+    %%%%%:  169-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  169-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  169-block  2
+call    7 never executed
+    $$$$$:  169-block  3
+call    8 never executed
+    $$$$$:  169-block  4
+    $$$$$:  169-block  5
+call    9 never executed
+    #####:  170:        auto wdg = new JustListGUI(service.sortMoviesByMainActor(true));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  170-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  170-block  1
+call    7 never executed
+    $$$$$:  170-block  2
+call    8 never executed
+    $$$$$:  170-block  3
+call    9 never executed
+    $$$$$:  170-block  4
+call   10 never executed
+    #####:  171:        wdg->show();
+call    0 never executed
+    #####:  172:        loadData(service.sortMoviesByMainActor(true));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  172-block  0
+call    4 never executed
+    $$$$$:  172-block  1
+call    5 never executed
+    #####:  173:    });
+function _ZZN3GUI11initConnectEvENKUlvE12_clEv called 0 returned 0% blocks executed 0%
+       1*:  174:    QObject::connect(btnUndo, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  175:        qDebug() << "Undo apasat";
+    %%%%%:  175-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  175-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  175-block  2
+call    7 never executed
+    $$$$$:  175-block  3
+call    8 never executed
+    $$$$$:  175-block  4
+    $$$$$:  175-block  5
+call    9 never executed
+        -:  176:        try {
+    #####:  177:            service.doUndo();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  178:            loadData(service.getAll());
+    %%%%%:  178-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  178-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  179:            addButtons();
+    %%%%%:  179-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  180:        } catch (const RepositoryException &exception) {
+    $$$$$:  180-block  0
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  180-block  1
+call    4 never executed
+    =====:  181:            QMessageBox::information(nullptr, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  181-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:  181-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  181-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    $$$$$:  181-block  3
+call   13 never executed
+call   14 never executed
+call   15 never executed
+    $$$$$:  181-block  4
+call   16 never executed
+    $$$$$:  181-block  5
+    $$$$$:  181-block  6
+call   17 never executed
+    $$$$$:  181-block  7
+    $$$$$:  181-block  8
+call   18 never executed
+    $$$$$:  181-block  9
+    $$$$$:  181-block 10
+    =====:  182:        } catch (const ValidationException &exception) {
+call    0 never executed
+    $$$$$:  182-block  0
+call    1 never executed
+    $$$$$:  182-block  1
+call    2 never executed
+    =====:  183:            QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  183-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:  183-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  183-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    $$$$$:  183-block  3
+call   13 never executed
+call   14 never executed
+call   15 never executed
+    $$$$$:  183-block  4
+call   16 never executed
+    $$$$$:  183-block  5
+    $$$$$:  183-block  6
+call   17 never executed
+    $$$$$:  183-block  7
+    $$$$$:  183-block  8
+call   18 never executed
+    $$$$$:  183-block  9
+    $$$$$:  183-block 10
+    =====:  184:        } catch (const exception &exception) {
+call    0 never executed
+    $$$$$:  184-block  0
+call    1 never executed
+    $$$$$:  184-block  1
+call    2 never executed
+    =====:  185:            QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  185-block  0
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:  185-block  1
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  185-block  2
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  185-block  3
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+    $$$$$:  185-block  4
+call   19 never executed
+    $$$$$:  185-block  5
+    $$$$$:  185-block  6
+call   20 never executed
+    $$$$$:  185-block  7
+    $$$$$:  185-block  8
+call   21 never executed
+    $$$$$:  185-block  9
+    $$$$$:  185-block 10
+call   22 never executed
+    $$$$$:  185-block 11
+    $$$$$:  185-block 12
+    =====:  186:        }
+call    0 never executed
+    $$$$$:  186-block  0
+call    1 never executed
+    #####:  187:    });
+    %%%%%:  187-block  0
+function _ZZN3GUI11initConnectEvENKUlvE13_clEv called 0 returned 0% blocks executed 0%
+       1*:  188:    QObject::connect(table, &QTableWidget::itemSelectionChanged, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  189:        qDebug() << "Selection changed";
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    $$$$$:  189-block  4
+    $$$$$:  189-block  5
+        -:  190:
+    #####:  191:        auto selectedRow = table->selectedItems();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  192:        if (selectedRow.empty()) {
+    %%%%%:  192-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  193:            titleText->setText("");
+    %%%%%:  193-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  193-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  193-block  2
+call    6 never executed
+    $$$$$:  193-block  3
+call    7 never executed
+    $$$$$:  193-block  4
+    #####:  194:            genreText->setText("");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  194-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  194-block  1
+call    6 never executed
+    $$$$$:  194-block  2
+call    7 never executed
+    $$$$$:  194-block  3
+    #####:  195:            yearText->setText("");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  195-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  195-block  1
+call    6 never executed
+    $$$$$:  195-block  2
+call    7 never executed
+    $$$$$:  195-block  3
+    #####:  196:            mainActorText->setText("");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  196-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  196-block  1
+call    6 never executed
+    $$$$$:  196-block  2
+call    7 never executed
+    $$$$$:  196-block  3
+    #####:  197:            return;
+        -:  198:        }
+    #####:  199:        auto selectedTitle = selectedRow.at(0);
+    %%%%%:  199-block  0
+call    0 never executed
+    #####:  200:        auto selectedGenre = selectedRow.at(1);
+call    0 never executed
+    #####:  201:        auto selectedYear = selectedRow.at(2);
+call    0 never executed
+    #####:  202:        auto selectedMainActor = selectedRow.at(3);
+call    0 never executed
+    #####:  203:        titleText->setText(selectedTitle->text());
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  203-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  203-block  1
+call    6 never executed
+    $$$$$:  203-block  2
+call    7 never executed
+    $$$$$:  203-block  3
+    #####:  204:        genreText->setText(selectedGenre->text());
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  204-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  204-block  1
+call    6 never executed
+    $$$$$:  204-block  2
+call    7 never executed
+    $$$$$:  204-block  3
+    #####:  205:        yearText->setText(selectedYear->text());
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  205-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  205-block  1
+call    6 never executed
+    $$$$$:  205-block  2
+call    7 never executed
+    $$$$$:  205-block  3
+    #####:  206:        mainActorText->setText(selectedMainActor->text());
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  206-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  206-block  1
+call    6 never executed
+    $$$$$:  206-block  2
+call    7 never executed
+    $$$$$:  206-block  3
+    #####:  207:    });
+    %%%%%:  207-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  207-block  1
+call    3 never executed
+        -:  208:    //For every button with the genre, we connect it to the function that filters by genre
+function _ZZN3GUI11initConnectEvENKUlvE14_clEv called 0 returned 0% blocks executed 0%
+       1*:  209:    QObject::connect(btnWatchList, &QPushButton::clicked, [&]() {
+call    0 returned 1
+call    1 returned 1
+    #####:  210:        qDebug() << "Watchlist clicked";
+    %%%%%:  210-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  210-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  210-block  2
+call    7 never executed
+    $$$$$:  210-block  3
+call    8 never executed
+    $$$$$:  210-block  4
+    $$$$$:  210-block  5
+call    9 never executed
+    #####:  211:        auto wdg = new WatchlistCRUDGUI(service);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  211-block  0
+call    4 never executed
+    #####:  212:        wdg->show();
+    %%%%%:  212-block  0
+call    0 never executed
+    #####:  213:    });
+        1:  214:}
+        -:  215:
+function _ZN3GUI11updateMovieEv called 0 returned 0% blocks executed 0%
+    #####:  216:void GUI::updateMovie() {
+        -:  217:    try {
+    #####:  218:        string title = titleText->text().toStdString();
+    %%%%%:  218-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  218-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  218-block  2
+    #####:  219:        string genre = genreText->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  219-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  219-block  1
+    #####:  220:        int year = stoi(yearText->text().toStdString());
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  220-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  220-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  220-block  2
+call    9 never executed
+call   10 never executed
+    $$$$$:  220-block  3
+call   11 never executed
+    $$$$$:  220-block  4
+    $$$$$:  220-block  5
+call   12 never executed
+    $$$$$:  220-block  6
+    #####:  221:        string mainActor = mainActorText->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  221-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  221-block  1
+    #####:  222:        service.updateMovie(title, genre, year, mainActor);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  223:        loadData(service.getAll());
+    %%%%%:  223-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  223-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  224:        addButtons();
+    %%%%%:  224-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  225:    } catch (const RepositoryException &exception) {
+    %%%%%:  225-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:  225-block  1
+call    3 never executed
+    $$$$$:  225-block  2
+call    4 never executed
+    $$$$$:  225-block  3
+call    5 never executed
+    $$$$$:  225-block  4
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  225-block  5
+call   10 never executed
+    =====:  226:        QMessageBox::information(nullptr, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  226-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:  226-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  226-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    $$$$$:  226-block  3
+call   13 never executed
+call   14 never executed
+call   15 never executed
+    $$$$$:  226-block  4
+call   16 never executed
+    $$$$$:  226-block  5
+    $$$$$:  226-block  6
+call   17 never executed
+    $$$$$:  226-block  7
+    $$$$$:  226-block  8
+call   18 never executed
+    $$$$$:  226-block  9
+    $$$$$:  226-block 10
+    =====:  227:    } catch (const ValidationException &exception) {
+call    0 never executed
+    $$$$$:  227-block  0
+call    1 never executed
+    $$$$$:  227-block  1
+call    2 never executed
+    =====:  228:        QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  228-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:  228-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  228-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    $$$$$:  228-block  3
+call   13 never executed
+call   14 never executed
+call   15 never executed
+    $$$$$:  228-block  4
+call   16 never executed
+    $$$$$:  228-block  5
+    $$$$$:  228-block  6
+call   17 never executed
+    $$$$$:  228-block  7
+    $$$$$:  228-block  8
+call   18 never executed
+    $$$$$:  228-block  9
+    $$$$$:  228-block 10
+    =====:  229:    } catch (const exception &exception) {
+call    0 never executed
+    $$$$$:  229-block  0
+call    1 never executed
+    $$$$$:  229-block  1
+call    2 never executed
+    =====:  230:        QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  230-block  0
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:  230-block  1
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  230-block  2
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  230-block  3
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+    $$$$$:  230-block  4
+call   19 never executed
+    $$$$$:  230-block  5
+    $$$$$:  230-block  6
+call   20 never executed
+    $$$$$:  230-block  7
+    $$$$$:  230-block  8
+call   21 never executed
+    $$$$$:  230-block  9
+    $$$$$:  230-block 10
+call   22 never executed
+    $$$$$:  230-block 11
+    $$$$$:  230-block 12
+    =====:  231:    }
+call    0 never executed
+    $$$$$:  231-block  0
+call    1 never executed
+    #####:  232:}
+    %%%%%:  232-block  0
+        -:  233:
+function _ZN3GUI11deleteMovieEv called 0 returned 0% blocks executed 0%
+    #####:  234:void GUI::deleteMovie() {
+        -:  235:    try {
+    #####:  236:        string title = titleText->text().toStdString();
+    %%%%%:  236-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  236-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  236-block  2
+    #####:  237:        service.removeMovie(title, "", 2, "");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  237-block  0
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  237-block  1
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:  237-block  2
+call   11 never executed
+call   12 never executed
+call   13 never executed
+call   14 never executed
+    $$$$$:  237-block  3
+call   15 never executed
+    $$$$$:  237-block  4
+    $$$$$:  237-block  5
+call   16 never executed
+    $$$$$:  237-block  6
+    $$$$$:  237-block  7
+call   17 never executed
+    $$$$$:  237-block  8
+    $$$$$:  237-block  9
+call   18 never executed
+    $$$$$:  237-block 10
+    #####:  238:        loadData(service.getAll());
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  238-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  239:    } catch (const RepositoryException &exception) {
+    %%%%%:  239-block  0
+call    0 never executed
+    $$$$$:  239-block  1
+call    1 never executed
+    $$$$$:  239-block  2
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  239-block  3
+call    6 never executed
+    =====:  240:        QMessageBox::information(nullptr, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  240-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:  240-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  240-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    $$$$$:  240-block  3
+call   13 never executed
+call   14 never executed
+call   15 never executed
+    $$$$$:  240-block  4
+call   16 never executed
+    $$$$$:  240-block  5
+    $$$$$:  240-block  6
+call   17 never executed
+    $$$$$:  240-block  7
+    $$$$$:  240-block  8
+call   18 never executed
+    $$$$$:  240-block  9
+    $$$$$:  240-block 10
+    =====:  241:    } catch (const ValidationException &exception) {
+call    0 never executed
+    $$$$$:  241-block  0
+call    1 never executed
+    $$$$$:  241-block  1
+call    2 never executed
+    =====:  242:        QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  242-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:  242-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    $$$$$:  242-block  2
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    $$$$$:  242-block  3
+call   13 never executed
+call   14 never executed
+call   15 never executed
+    $$$$$:  242-block  4
+call   16 never executed
+    $$$$$:  242-block  5
+    $$$$$:  242-block  6
+call   17 never executed
+    $$$$$:  242-block  7
+    $$$$$:  242-block  8
+call   18 never executed
+    $$$$$:  242-block  9
+    $$$$$:  242-block 10
+    =====:  243:    } catch (const exception &exception) {
+call    0 never executed
+    $$$$$:  243-block  0
+call    1 never executed
+    $$$$$:  243-block  1
+call    2 never executed
+    =====:  244:        QMessageBox::critical(this, "Error", QString::fromStdString(exception.what()));
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  244-block  0
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:  244-block  1
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    $$$$$:  244-block  2
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  244-block  3
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+    $$$$$:  244-block  4
+call   19 never executed
+    $$$$$:  244-block  5
+    $$$$$:  244-block  6
+call   20 never executed
+    $$$$$:  244-block  7
+    $$$$$:  244-block  8
+call   21 never executed
+    $$$$$:  244-block  9
+    $$$$$:  244-block 10
+call   22 never executed
+    $$$$$:  244-block 11
+    $$$$$:  244-block 12
+    =====:  245:    }
+call    0 never executed
+    $$$$$:  245-block  0
+call    1 never executed
+    #####:  246:}
+    %%%%%:  246-block  0
+        -:  247:
+function _ZN3GUI10addButtonsEv called 1 returned 100% blocks executed 59%
+        1:  248:void GUI::addButtons() {
+        2:  249:    auto map1 = service.getMoviesByType("Genre");
+        1:  249-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  249-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 1
+    $$$$$:  249-block  2
+    $$$$$:  249-block  3
+       1*:  250:    for (const auto &btn: genreButtons) {
+call    0 returned 1
+call    1 returned 1
+    %%%%%:  250-block  0
+call    2 never executed
+    %%%%%:  250-block  1
+call    3 never executed
+        1:  250-block  2
+call    4 returned 1
+branch  5 taken 0
+branch  6 taken 1 (fallthrough)
+    #####:  251:        QObject::disconnect(btn, &QPushButton::clicked, nullptr, nullptr);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  252:    }
+        1:  253:    genreButtons.clear();
+        1:  253-block  0
+call    0 returned 1
+        -:  254:
+        -:  255:    QLayoutItem *item;
+        1:  256:    while ((item = buttonLayout->takeAt(0)) != nullptr) {
+        1:  256-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  256-block  1
+branch  3 taken 0
+branch  4 taken 1 (fallthrough)
+    #####:  257:        delete item->widget();
+    %%%%%:  257-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  257-block  1
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  257-block  2
+call    5 never executed
+    #####:  258:        delete item;
+    %%%%%:  258-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  258-block  1
+call    2 never executed
+        -:  259:    }
+        -:  260:
+        3:  261:    for (const auto &element: map1) {
+        1:  261-block  0
+call    0 returned 1
+call    1 returned 1
+        2:  261-block  1
+call    2 returned 2
+        3:  261-block  2
+call    3 returned 3
+branch  4 taken 2
+branch  5 taken 1 (fallthrough)
+        2:  262:        auto newBtn = new QPushButton(QString::fromStdString(element.first));
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  262-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  262-block  1
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:  262-block  2
+call    9 returned 2
+    $$$$$:  262-block  3
+call   10 never executed
+    $$$$$:  262-block  4
+call   11 never executed
+    $$$$$:  262-block  5
+        2:  263:        genreButtons.push_back(newBtn);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  264:        buttonLayout->addWidget(newBtn);
+        2:  264-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  264-block  1
+call    4 returned 2
+    $$$$$:  264-block  2
+        -:  265:    }
+        -:  266:
+        3:  267:    for (const auto &btn: genreButtons) {
+        1:  267-block  0
+call    0 returned 1
+call    1 returned 1
+        2:  267-block  1
+call    2 returned 2
+        3:  267-block  2
+call    3 returned 3
+branch  4 taken 2
+branch  5 taken 1 (fallthrough)
+function _ZZN3GUI10addButtonsEvENKUlvE_clEv called 0 returned 0% blocks executed 0%
+       2*:  268:        QObject::connect(btn, &QPushButton::clicked, [&]() {
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  268-block  0
+call    3 returned 2
+call    4 returned 2
+    #####:  269:            qDebug() << "Filter by genre apasat";
+    %%%%%:  269-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  269-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  269-block  2
+call    7 never executed
+    $$$$$:  269-block  3
+call    8 never executed
+    $$$$$:  269-block  4
+    $$$$$:  269-block  5
+    #####:  270:            string genre = btn->text().toStdString();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  270-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  270-block  1
+    #####:  271:            int count = 0;
+    #####:  272:            for (const auto &movie: service.getAll()) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  272-block  0
+call    3 never executed
+call    4 never executed
+    %%%%%:  272-block  1
+call    5 never executed
+    %%%%%:  272-block  2
+call    6 never executed
+    %%%%%:  272-block  3
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####:  273:                if (movie.getGenre() == genre) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  273-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:  274:                    count++;
+    %%%%%:  274-block  0
+        -:  275:                }
+        -:  276:            }
+    #####:  277:            string message = "There are " + to_string(count) + " movies with the genre " + genre;
+    %%%%%:  277-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  277-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  277-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  277-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+call   12 never executed
+call   13 never executed
+    $$$$$:  277-block  4
+    $$$$$:  277-block  5
+    $$$$$:  277-block  6
+    #####:  278:            QMessageBox::information(nullptr, "Info", QString::fromStdString(message));
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  278-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  278-block  1
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:  278-block  2
+call   10 never executed
+call   11 never executed
+    $$$$$:  278-block  3
+call   12 never executed
+    $$$$$:  278-block  4
+    $$$$$:  278-block  5
+call   13 never executed
+    $$$$$:  278-block  6
+    $$$$$:  278-block  7
+    #####:  279:            auto wdg = new JustListGUI(service.getMoviesByGenre(genre));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  279-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  279-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  279-block  2
+call    9 never executed
+    $$$$$:  279-block  3
+call   10 never executed
+    $$$$$:  279-block  4
+call   11 never executed
+    $$$$$:  279-block  5
+    #####:  280:            wdg->show();
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  281:        });
+    %%%%%:  281-block  0
+call    0 never executed
+call    1 never executed
+    $$$$$:  281-block  1
+call    2 never executed
+    $$$$$:  281-block  2
+call    3 never executed
+        -:  282:    }
+        1:  283:}
+        1:  283-block  0
+call    0 returned 1
+    $$$$$:  283-block  1
+call    1 never executed
